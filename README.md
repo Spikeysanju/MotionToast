@@ -1,15 +1,15 @@
-# Motion Toast
+# Motion Toast - An Beautiful Toast Library for Android Kotlin 🤩🔥 
 
 [![platform](https://img.shields.io/badge/platform-Android-yellow.svg)](https://www.android.com)
 [![API](https://img.shields.io/badge/API-11%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=22)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-An Beautiful Multipurpose Motion Toast Library in Android using Kotlin. 
+An Beautiful Multipurpose Motion Toast Library in Android using Kotlin 😍
 
-## Preview - Motion Toast
+## Preview - Motion Toast 🌟 
 ![gif](https://github.com/Spikeysanju/Video_templates/blob/master/Motion%20Toast.mov)
 
-## Preview - Color Motion Toast
+## Preview - Color Motion Toast 🌈
 ![gif](https://github.com/Spikeysanju/Video_templates/blob/master/Toast%20Types-5.png)
 
 
@@ -58,7 +58,7 @@ Add dependency in your app module
 	}
 
 ```
-## Toast Types
+## Five Toast Types 🖐🏼
 ```
         1. TOAST_SUCCESS
         2. TOAST_ERROR
@@ -67,7 +67,7 @@ Add dependency in your app module
         5. TOAST_DELETE
 ```
 
-## Toast Duration
+## Toast Duration ⌛️ 
 ```
         1. LONG_DURATION // 4 Seconds
         2. SHORT_DURATION // 2 Seconds
@@ -76,7 +76,7 @@ Add dependency in your app module
 
 ## Usage 
 
-# Sample Code for - Motion Toast
+# Sample Code for - Motion Toast 🌟 
 
 ### Success Toast
 ```
@@ -126,7 +126,7 @@ MotionToast.createToast(this,"Please fill all the details!",
 
 ```
 
-# Sample Code for - Color Motion Toast
+# Sample Code for - Color Motion Toast 🌈
 
 ### Success Toast
 ```
