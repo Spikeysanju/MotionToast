@@ -9,8 +9,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() , View.OnClickListener {
 
-    private val name :String = "Spikey"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,6 +18,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         warningBtn.setOnClickListener(this)
         infoBtn.setOnClickListener(this)
         deleteBtn.setOnClickListener(this)
+        noInternetBtn.setOnClickListener(this)
 
     }
 
@@ -31,7 +30,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 MotionToast.GRAVITY_BOTTOM,
                 MotionToast.LONG_DURATION,
                 ResourcesCompat.getFont(this,R.font.helvetica_regular))
-
             }
             R.id.errorBtn -> {
                 MotionToast.createToast(this,"Profile Update Failed!",
@@ -49,7 +47,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             }
             R.id.infoBtn ->{
 
-                MotionToast.createToast(this,name + " " + "Have Earned 30 Loyalty Points!",
+                MotionToast.createToast(
+                    this, "Welcome back sanju!",
                     MotionToast.TOAST_INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -61,6 +60,15 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))
+            }
+            R.id.noInternetBtn -> {
+                MotionToast.createToast(
+                    this, "Please turn on internet connection!",
+                    MotionToast.TOAST_NO_INTERNET,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this, R.font.helvetica_regular)
+                )
             }
             else -> {
                 MotionToast.infoToast(this, "You have no buttons!",

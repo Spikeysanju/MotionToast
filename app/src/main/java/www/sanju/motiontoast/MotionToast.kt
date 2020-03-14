@@ -14,17 +14,21 @@ import kotlinx.android.synthetic.main.motion_toast.view.*
 
 class MotionToast {
     companion object {
-        val GRAVITY_TOP = 48
-        val GRAVITY_CENTER = 17
-        val GRAVITY_BOTTOM = 80
 
-        val LONG_DURATION = 4000
-        val SHORT_DURATION = 2000
+
+        val LONG_DURATION = 5000 // 5 seconds
+        val SHORT_DURATION = 2000 // 2 seconds
         val TOAST_SUCCESS = "SUCCESS"
         val TOAST_ERROR = "FAILED"
         val TOAST_WARNING = "WARNING"
         val TOAST_INFO = "INFO"
         val TOAST_DELETE = "DELETE"
+        val TOAST_NO_INTERNET = "NO INTERNET"
+
+
+        val GRAVITY_TOP = 48
+        val GRAVITY_CENTER = 17
+        val GRAVITY_BOTTOM = 80
 
         private lateinit var layoutInflater: LayoutInflater
 
@@ -509,6 +513,7 @@ class MotionToast {
                 (context).findViewById(R.id.custom_toast_layout)
             )
             when(style){
+                // Function for Toast Success
                 TOAST_SUCCESS ->{
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
@@ -516,32 +521,44 @@ class MotionToast {
                             R.drawable.ic_check_green
                         )
                     )
+
+                    // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context,R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
+                    // Background tint color for side view
                     layout.colorView.backgroundTintList = ContextCompat.getColorStateList(context, R.color.success_color)
 
+                    // round background color
                     val drawable = ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
                         ContextCompat.getColor(context, R.color.success_bg_color),
                         PorterDuff.Mode.MULTIPLY
                     )
+
                     layout.background = drawable
+
+                    // Setting up the color for title & Message text
                     layout.custom_toast_text.setTextColor(ContextCompat.getColor(context, R.color.success_color))
                     layout.custom_toast_text.text = TOAST_SUCCESS
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
+
+                    // Setting typeface for the text
                     font?.let {
                         layout.custom_toast_description.typeface = font
                     }
+
+                    // init toast
                     val toast = Toast(context.applicationContext)
+
+                    //   Setting up the duration
                     when (duration) {
                         LONG_DURATION -> {
                             val timer = object: CountDownTimer(5000, 1000) {
                                 override fun onTick(millisUntilFinished: Long) {
                                     toast.show()
                                 }
-
                                 override fun onFinish() {
                                     toast.cancel()
                                 }
@@ -574,14 +591,19 @@ class MotionToast {
                             timer.start()
                         }
                     }
+
+                    // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
                         toast.setGravity(position, 0, 0)
                     }
-                    toast.view = layout//setting the view of custom toast layout
+
+                    // Setting layout to toast
+                    toast.view = layout
                     toast.show()
                 }
+                // CTA for Toast Error
                 TOAST_ERROR ->{
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
@@ -657,6 +679,7 @@ class MotionToast {
                     toast.view = layout//setting the view of custom toast layout
                     toast.show()
                 }
+                // CTA for Toast Warning
                 TOAST_WARNING ->{
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
@@ -731,6 +754,7 @@ class MotionToast {
                     toast.view = layout//setting the view of custom toast layout
                     toast.show()
                 }
+                // CTA for Toast Info
                 TOAST_INFO ->{
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
@@ -804,6 +828,7 @@ class MotionToast {
                     toast.view = layout//setting the view of custom toast layout
                     toast.show()
                 }
+                // CTA for Toast Delete
                 TOAST_DELETE ->{
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
@@ -881,11 +906,97 @@ class MotionToast {
                     toast.show()
 
                 }
+                // CTA for Toast No Internet
+                TOAST_NO_INTERNET -> {
+                    layout.custom_toast_image.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            context,
+                            R.drawable.ic_no_internet
+                        )
+                    )
+
+
+                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
+                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    layout.colorView.backgroundTintList =
+                        ContextCompat.getColorStateList(context, R.color.warning_color)
+
+
+                    val drawable =
+                        ContextCompat.getDrawable(context, R.drawable.toast_round_background)
+                    drawable?.colorFilter = PorterDuffColorFilter(
+                        ContextCompat.getColor(context, R.color.warning_bg_color),
+                        PorterDuff.Mode.MULTIPLY
+                    )
+                    layout.background = drawable
+                    layout.custom_toast_text.setTextColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.warning_color
+                        )
+                    )
+                    layout.custom_toast_text.text = TOAST_NO_INTERNET
+                    layout.custom_toast_description.setTextColor(Color.BLACK)
+                    layout.custom_toast_description.text = message
+                    font?.let {
+                        layout.custom_toast_description.typeface = font
+                    }
+                    val toast = Toast(context.applicationContext)
+                    when (duration) {
+                        LONG_DURATION -> {
+                            val timer = object : CountDownTimer(5000, 1000) {
+                                override fun onTick(millisUntilFinished: Long) {
+                                    toast.show()
+                                }
+
+                                override fun onFinish() {
+                                    toast.cancel()
+                                }
+                            }
+                            timer.start()
+
+                        }
+                        SHORT_DURATION -> {
+                            val timer = object : CountDownTimer(3000, 1000) {
+                                override fun onTick(millisUntilFinished: Long) {
+                                    toast.show()
+                                }
+
+                                override fun onFinish() {
+                                    toast.cancel()
+                                }
+                            }
+                            timer.start()
+                        }
+                        else -> {
+                            val timer = object : CountDownTimer(2000, 1000) {
+                                override fun onTick(millisUntilFinished: Long) {
+                                    toast.show()
+                                }
+
+                                override fun onFinish() {
+                                    toast.cancel()
+                                }
+                            }
+                            timer.start()
+                        }
+                    }
+                    if (position == GRAVITY_BOTTOM) {
+                        toast.setGravity(position, 0, 100)
+                    } else {
+                        toast.setGravity(position, 0, 0)
+                    }
+                    toast.view = layout//setting the view of custom toast layout
+//                    layout.animate().alpha(0f).duration = 3000
+                    toast.show()
+
+                }
+
 
             }
 
         }
-
-
     }
+
+
 }
