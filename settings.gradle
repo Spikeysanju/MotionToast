@@ -1,2 +1,3 @@
 rootProject.name='MotionToast'
 include ':app'
+include ':motiontoast'

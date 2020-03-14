@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:layout_margin="20dp"
-    android:id="@+id/custom_toast_layout_2"
+    android:id="@+id/motion_toast_view"
     android:background="@android:color/white">
 
     <View

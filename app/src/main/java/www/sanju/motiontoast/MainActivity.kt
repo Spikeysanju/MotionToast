@@ -47,9 +47,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             }
             R.id.infoBtn ->{
 
-                MotionToast.createToast(
+                MotionToast.createColorToast(
                     this, "Welcome back sanju!",
-                    MotionToast.TOAST_INFO,
+                    MotionToast.TOAST_NO_INTERNET,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))
