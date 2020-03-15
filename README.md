@@ -14,16 +14,28 @@ An Beautiful Multipurpose Motion Toast Library in Android using Kotlin 😍
 ## Preview - Color Motion Toast 🌈
 ![gif](https://github.com/Spikeysanju/Video_templates/blob/master/Toast%20Types-5.png)
 
+## Preview - Dark Toast 🌈
+![gif](https://github.com/Spikeysanju/Video_templates/blob/master/Dark%20Toast.png)
+
+## Preview - Dark Color Toast 🌈
+![gif](https://github.com/Spikeysanju/Video_templates/blob/master/Dark%20Color%20Toast.png)
+
+
+# Types of Toast Style ❤️
 
 
 <table style="width:100%">
   <tr>
     <th>1. Motion Toast </th>
     <th>2. Color Motion Toast</th> 
+    <th>3. Dark Toast </th>
+    <th>4. Dark Color Toast</th> 
   </tr>
   <tr>
     <td><img src = "https://github.com/Spikeysanju/Video_templates/blob/master/Toast%20Types-3.png"/></td> 
-    <td><img src = "https://github.com/Spikeysanju/Video_templates/blob/master/Toast%20Types-5.png"/></td> 
+    <td><img src = "https://github.com/Spikeysanju/Video_templates/blob/master/Toast%20Types-5.png"/></td>
+    <td><img src = "https://github.com/Spikeysanju/Video_templates/blob/master/Dark%20Toast.png"/></td> 
+    <td><img src = "https://github.com/Spikeysanju/Video_templates/blob/master/Dark%20Color%20Toast.png"/></td> 
    
   </tr>
 </table>
@@ -56,7 +68,7 @@ Add dependency in your app module
 
 ```
 	dependencies {
-	        implementation 'com.github.Spikeysanju:MotionToast:1.0'
+	        implementation 'com.github.Spikeysanju:MotionToast:1.1' 
 	}
 
 ```
@@ -177,6 +189,107 @@ MotionToast.createColorToast(this,"Please fill all the details!",
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
 
 ```
+
+# Sample Code for - Dark Toast 🌚🖤 
+
+### Success Toast
+```
+ MotionToast.darkToast(this,"Upload Completed!",
+                MotionToast.TOAST_SUCCESS,
+                MotionToast.GRAVITY_BOTTOM,
+                MotionToast.LONG_DURATION,
+                ResourcesCompat.getFont(this,R.font.helvetica_regular))
+                
+```
+
+### Error Toast
+```
+ MotionToast.darkToast(this,"Profile Update Failed!",
+                    MotionToast.TOAST_ERROR,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this,R.font.helvetica_regular))  
+```
+### Warning Toast
+```
+MotionToast.darkToast(this,"Please fill all the details!",
+                    MotionToast.TOAST_WARNING,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this,R.font.helvetica_regular))  
+
+        
+```
+
+### Info Toast
+```
+       MotionToast.darkToast(this,"This is information toast!",
+                    MotionToast.TOAST_INFO,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this,R.font.helvetica_regular))  
+
+```
+### Delete Toast
+```
+       MotionToast.darkToast(this,"Delete all history!",
+                    MotionToast.TOAST_DELETE,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this,R.font.helvetica_regular))  
+
+```
+
+# Sample Code for - Dark Color Toast 🌚🖤🌈
+
+### Success Toast
+```
+ MotionToast.darkColorToast(this,"Upload Completed!",
+                MotionToast.TOAST_SUCCESS,
+                MotionToast.GRAVITY_BOTTOM,
+                MotionToast.LONG_DURATION,
+                ResourcesCompat.getFont(this,R.font.helvetica_regular))
+                
+```
+
+### Error Toast
+```
+ MotionToast.darkColorToast(this,"Profile Update Failed!",
+                    MotionToast.TOAST_ERROR,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this,R.font.helvetica_regular))  
+```
+### Warning Toast
+```
+MotionToast.darkColorToast(this,"Please fill all the details!",
+                    MotionToast.TOAST_WARNING,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this,R.font.helvetica_regular))  
+
+        
+```
+
+### Info Toast
+```
+       MotionToast.darkColorToast(this,"This is information toast!",
+                    MotionToast.TOAST_INFO,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this,R.font.helvetica_regular))  
+
+```
+### Delete Toast
+```
+       MotionToast.darkColorToast(this,"Delete all history!",
+                    MotionToast.TOAST_DELETE,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this,R.font.helvetica_regular))  
+
+```
+
 
 # Donation
 If this project help you reduce time to develop, you can give me a cup of coffee :) 
