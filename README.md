@@ -6,8 +6,10 @@
 
 An Beautiful Multipurpose Motion Toast Library in Android using Kotlin 😍
 
+![GitHub Cards Preview](https://github.com/Spikeysanju/Video_templates/blob/master/Github%20Card.png)
+
 ## Preview - Motion Toast 🌟 
-![gif](https://github.com/Spikeysanju/Video_templates/blob/master/Motion%20Toast.mov)
+![gif](https://github.com/Spikeysanju/Video_templates/blob/master/Motion%20Toast.gif)
 
 ## Preview - Color Motion Toast 🌈
 ![gif](https://github.com/Spikeysanju/Video_templates/blob/master/Toast%20Types-5.png)
