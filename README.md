@@ -1,4 +1,4 @@
-# Motion Toast - An Beautiful Toast Library for Android Kotlin 🤩🔥 
+# Motion Toast - A Beautiful Toast Library for Android Kotlin 🤩🔥 
 
 [![platform](https://img.shields.io/badge/platform-Android-yellow.svg)](https://www.android.com)
 [![API](https://img.shields.io/badge/API-11%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=22)
@@ -42,7 +42,7 @@ An Beautiful Multipurpose Motion Toast Library in Android using Kotlin 😍
 
 ## About
 
-An Beautiful Multipurpose Motion Toast Library in Android using Kotlin. 
+A Beautiful Multipurpose Motion Toast Library in Android using Kotlin. 
 
 ## Dependency Project Level
 
