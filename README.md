@@ -42,7 +42,7 @@ A Beautiful Multipurpose Motion Toast Library in Android using Kotlin 😍
 
 ## About
 
-An Beautiful Multipurpose Motion Toast Library in Android using Kotlin. 
+A Beautiful Multipurpose Motion Toast Library in Android using Kotlin. 
 
 ## Dependency Project Level
 
