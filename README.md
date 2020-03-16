@@ -4,7 +4,7 @@
 [![API](https://img.shields.io/badge/API-11%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=22)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-An Beautiful Multipurpose Motion Toast Library in Android using Kotlin 😍
+A Beautiful Multipurpose Motion Toast Library in Android using Kotlin 😍
 
 ![GitHub Cards Preview](https://github.com/Spikeysanju/Video_templates/blob/master/Github%20Card.png)
 
