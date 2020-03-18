@@ -17,19 +17,7 @@ class MotionToast {
     companion object {
 
 
-        val LONG_DURATION = 5000 // 5 seconds
-        val SHORT_DURATION = 2000 // 2 seconds
-        val TOAST_SUCCESS = "SUCCESS"
-        val TOAST_ERROR = "FAILED"
-        val TOAST_WARNING = "WARNING"
-        val TOAST_INFO = "INFO"
-        val TOAST_DELETE = "DELETE"
-        val TOAST_NO_INTERNET = "NO INTERNET"
 
-
-        val GRAVITY_TOP = 48
-        val GRAVITY_CENTER = 20
-        val GRAVITY_BOTTOM = 80
 
         private lateinit var layoutInflater: LayoutInflater
 

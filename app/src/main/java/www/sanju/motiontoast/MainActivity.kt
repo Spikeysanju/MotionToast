@@ -34,54 +34,54 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
         when (v!!.id) {
             R.id.successBtn -> {
                 MotionToast.createToast(this,"Profile Completed!",
-                MotionToast.TOAST_SUCCESS,
-                MotionToast.GRAVITY_BOTTOM,
-                MotionToast.LONG_DURATION,
+                TOAST_SUCCESS,
+                GRAVITY_BOTTOM,
+                LONG_DURATION,
                 ResourcesCompat.getFont(this,R.font.helvetica_regular))
             }
             R.id.errorBtn -> {
                 MotionToast.createToast(this,"Profile Update Failed!",
-                    MotionToast.TOAST_ERROR,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_ERROR,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))         }
             R.id.warningBtn ->{
 
                 MotionToast.createToast(this,"Please Fill All The Details!",
-                    MotionToast.TOAST_WARNING,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_WARNING,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))
             }
             R.id.infoBtn ->{
 
                 MotionToast.createToast(
                     this, "Dark ui testing here!",
-                    MotionToast.TOAST_INFO,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_INFO,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))
             }
             R.id.deleteBtn ->{
                 MotionToast.createToast(this,"Profile Deleted!",
-                    MotionToast.TOAST_DELETE,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_DELETE,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))
             }
             R.id.noInternetBtn -> {
                 MotionToast.createToast(
                     this, "Please turn on internet connection!",
-                    MotionToast.TOAST_NO_INTERNET,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_NO_INTERNET,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
             }
             else -> {
                 MotionToast.infoToast(this, "You have no buttons!",
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.SHORT_DURATION,
+                    GRAVITY_BOTTOM,
+                    SHORT_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))
             }
         }
@@ -94,18 +94,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             R.id.successBtn -> {
                 MotionToast.darkColorToast(
                     this, "Profile Completed!",
-                    MotionToast.TOAST_SUCCESS,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_SUCCESS,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
             }
             R.id.errorBtn -> {
                 MotionToast.darkColorToast(
                     this, "Profile Update Failed!",
-                    MotionToast.TOAST_ERROR,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_ERROR,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
             }
@@ -113,9 +113,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
 
                 MotionToast.darkColorToast(
                     this, "Please Fill All The Details!",
-                    MotionToast.TOAST_WARNING,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_WARNING,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
             }
@@ -123,35 +123,35 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
 
                 MotionToast.darkColorToast(
                     this, "Dark ui testing here!",
-                    MotionToast.TOAST_INFO,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_INFO,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
             }
             R.id.deleteBtn -> {
                 MotionToast.darkColorToast(
                     this, "Profile Deleted!",
-                    MotionToast.TOAST_DELETE,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_DELETE,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
             }
             R.id.noInternetBtn -> {
                 MotionToast.darkColorToast(
                     this, "Please turn on internet connection!",
-                    MotionToast.TOAST_NO_INTERNET,
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.LONG_DURATION,
+                    TOAST_NO_INTERNET,
+                    GRAVITY_BOTTOM,
+                    LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
             }
             else -> {
                 MotionToast.infoToast(
                     this, "You have no buttons!",
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.SHORT_DURATION,
+                    GRAVITY_BOTTOM,
+                    SHORT_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
             }
