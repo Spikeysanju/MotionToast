@@ -62,45 +62,21 @@ class MotionToast {
                 layout.custom_toast_description.typeface = font
             }
             val toast = Toast(context.applicationContext)
-            when (duration) {
-                LONG_DURATION -> {
-                    val timer = object: CountDownTimer(5000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
-
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
-
+            val durationMillis = when (duration) {
+                LONG_DURATION -> 5000L
+                SHORT_DURATION -> 3000L
+                else -> 2000L
+            }
+            val timer = object : CountDownTimer(durationMillis, 1000) {
+                override fun onTick(millisUntilFinished: Long) {
+                    toast.show()
                 }
-                SHORT_DURATION -> {
-                    val timer = object: CountDownTimer(3000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
 
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
-                }
-                else -> {
-                    val timer = object: CountDownTimer(2000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
-
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
+                override fun onFinish() {
+                    toast.cancel()
                 }
             }
+            timer.start()
 
             if (position == GRAVITY_BOTTOM) {
                 toast.setGravity(position, 0, 100)
@@ -141,45 +117,21 @@ class MotionToast {
             }
             val toast = Toast(context.applicationContext)
 
-            when (duration) {
-                LONG_DURATION -> {
-                    val timer = object: CountDownTimer(5000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
-
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
-
+            val durationMillis = when (duration) {
+                LONG_DURATION -> 5000L
+                SHORT_DURATION -> 3000L
+                else -> 2000L
+            }
+            val timer = object: CountDownTimer(durationMillis, 1000) {
+                override fun onTick(millisUntilFinished: Long) {
+                    toast.show()
                 }
-                SHORT_DURATION -> {
-                    val timer = object: CountDownTimer(3000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
 
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
-                }
-                else -> {
-                    val timer = object: CountDownTimer(2000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
-
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
+                override fun onFinish() {
+                    toast.cancel()
                 }
             }
+            timer.start()
 
 
             if (position == GRAVITY_BOTTOM) {
@@ -221,45 +173,21 @@ class MotionToast {
                 layout.custom_toast_description.typeface = font
             }
             val toast = Toast(context.applicationContext)
-            when (duration) {
-                LONG_DURATION -> {
-                    val timer = object: CountDownTimer(5000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
-
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
-
+            val durationMillis = when (duration) {
+                LONG_DURATION -> 5000L
+                SHORT_DURATION -> 3000L
+                else -> 2000L
+            }
+            val timer = object : CountDownTimer(durationMillis, 1000) {
+                override fun onTick(millisUntilFinished: Long) {
+                    toast.show()
                 }
-                SHORT_DURATION -> {
-                    val timer = object: CountDownTimer(3000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
 
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
-                }
-                else -> {
-                    val timer = object: CountDownTimer(2000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
-
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
+                override fun onFinish() {
+                    toast.cancel()
                 }
             }
+            timer.start()
             if (position == GRAVITY_BOTTOM) {
                 toast.setGravity(position, 0, 100)
             } else {
@@ -299,45 +227,21 @@ class MotionToast {
                 layout.custom_toast_description.typeface = font
             }
             val toast = Toast(context.applicationContext)
-            when (duration) {
-                LONG_DURATION -> {
-                    val timer = object: CountDownTimer(5000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
-
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
-
+            val durationMillis = when (duration) {
+                LONG_DURATION -> 5000L
+                SHORT_DURATION -> 3000L
+                else -> 2000L
+            }
+            val timer = object : CountDownTimer(durationMillis, 1000) {
+                override fun onTick(millisUntilFinished: Long) {
+                    toast.show()
                 }
-                SHORT_DURATION -> {
-                    val timer = object: CountDownTimer(3000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
 
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
-                }
-                else -> {
-                    val timer = object: CountDownTimer(2000, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            toast.show()
-                        }
-
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
+                override fun onFinish() {
+                    toast.cancel()
                 }
             }
+            timer.start()
             if (position == GRAVITY_BOTTOM) {
                 toast.setGravity(position, 0, 100)
             } else {
@@ -379,45 +283,21 @@ class MotionToast {
                     layout.custom_toast_description.typeface = font
                 }
                 val toast = Toast(context.applicationContext)
-                when (duration) {
-                    LONG_DURATION -> {
-                        val timer = object: CountDownTimer(5000, 1000) {
-                            override fun onTick(millisUntilFinished: Long) {
-                                toast.show()
-                            }
-
-                            override fun onFinish() {
-                                toast.cancel()
-                            }
-                        }
-                        timer.start()
-
+                val durationMillis = when (duration) {
+                    LONG_DURATION -> 5000L
+                    SHORT_DURATION -> 3000L
+                    else -> 2000L
+                }
+                val timer = object : CountDownTimer(durationMillis, 1000) {
+                    override fun onTick(millisUntilFinished: Long) {
+                        toast.show()
                     }
-                    SHORT_DURATION -> {
-                        val timer = object: CountDownTimer(3000, 1000) {
-                            override fun onTick(millisUntilFinished: Long) {
-                                toast.show()
-                            }
 
-                            override fun onFinish() {
-                                toast.cancel()
-                            }
-                        }
-                        timer.start()
-                    }
-                    else -> {
-                        val timer = object: CountDownTimer(2000, 1000) {
-                            override fun onTick(millisUntilFinished: Long) {
-                                toast.show()
-                            }
-
-                            override fun onFinish() {
-                                toast.cancel()
-                            }
-                        }
-                        timer.start()
+                    override fun onFinish() {
+                        toast.cancel()
                     }
                 }
+                timer.start()
                 if (position == GRAVITY_BOTTOM) {
                     toast.setGravity(position, 0, 100)
                 } else {
@@ -425,7 +305,7 @@ class MotionToast {
                 }
                 toast.view = layout//setting the view of custom toast layout
                 toast.show()
-            } else{
+            } else {
                 layout.custom_toast_image.setImageDrawable(
                     ContextCompat.getDrawable(
                         context,
@@ -453,45 +333,21 @@ class MotionToast {
                     layout.custom_toast_description.typeface = font
                 }
                 val toast = Toast(context.applicationContext)
-                when (duration) {
-                    LONG_DURATION -> {
-                        val timer = object: CountDownTimer(5000, 1000) {
-                            override fun onTick(millisUntilFinished: Long) {
-                                toast.show()
-                            }
-
-                            override fun onFinish() {
-                                toast.cancel()
-                            }
-                        }
-                        timer.start()
-
+                val durationMillis = when (duration) {
+                    LONG_DURATION -> 5000L
+                    SHORT_DURATION -> 3000L
+                    else -> 2000L
+                }
+                val timer = object : CountDownTimer(durationMillis, 1000) {
+                    override fun onTick(millisUntilFinished: Long) {
+                        toast.show()
                     }
-                    SHORT_DURATION -> {
-                        val timer = object: CountDownTimer(3000, 1000) {
-                            override fun onTick(millisUntilFinished: Long) {
-                                toast.show()
-                            }
 
-                            override fun onFinish() {
-                                toast.cancel()
-                            }
-                        }
-                        timer.start()
-                    }
-                    else -> {
-                        val timer = object: CountDownTimer(2000, 1000) {
-                            override fun onTick(millisUntilFinished: Long) {
-                                toast.show()
-                            }
-
-                            override fun onFinish() {
-                                toast.cancel()
-                            }
-                        }
-                        timer.start()
+                    override fun onFinish() {
+                        toast.cancel()
                     }
                 }
+                timer.start()
                 if (position == GRAVITY_BOTTOM) {
                     toast.setGravity(position, 0, 100)
                 } else {
@@ -553,44 +409,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object: CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object: CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object: CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -629,47 +462,21 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
-
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object: CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object: CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object: CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
-
+                    timer.start()
 
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
@@ -689,16 +496,23 @@ class MotionToast {
                     )
                     val pulseAnimation = AnimationUtils.loadAnimation(context,R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList = ContextCompat.getColorStateList(context, R.color.warning_color)
+                    layout.colorView.backgroundTintList =
+                        ContextCompat.getColorStateList(context, R.color.warning_color)
 
-                    val drawable = ContextCompat.getDrawable(context, R.drawable.toast_round_background)
+                    val drawable =
+                        ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
                         ContextCompat.getColor(context, R.color.warning_bg_color),
                         PorterDuff.Mode.MULTIPLY
                     )
 
                     layout.background = drawable
-                    layout.custom_toast_text.setTextColor(ContextCompat.getColor(context, R.color.warning_color))
+                    layout.custom_toast_text.setTextColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.warning_color
+                        )
+                    )
                     layout.custom_toast_text.text = TOAST_WARNING
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
@@ -706,45 +520,21 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object: CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object: CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object: CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
@@ -755,25 +545,32 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Info
-                TOAST_INFO ->{
+                TOAST_INFO -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_info_blue
                         )
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,R.anim.pulse)
+                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
-                    layout.colorView.backgroundTintList = ContextCompat.getColorStateList(context, R.color.info_color)
+                    layout.colorView.backgroundTintList =
+                        ContextCompat.getColorStateList(context, R.color.info_color)
 
-                    val drawable = ContextCompat.getDrawable(context, R.drawable.toast_round_background)
+                    val drawable =
+                        ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
                         ContextCompat.getColor(context, R.color.info_bg_color),
                         PorterDuff.Mode.MULTIPLY
                     )
                     layout.background = drawable
-                    layout.custom_toast_text.setTextColor(ContextCompat.getColor(context, R.color.info_color))
+                    layout.custom_toast_text.setTextColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.info_color
+                        )
+                    )
                     layout.custom_toast_text.text = TOAST_INFO
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
@@ -783,7 +580,7 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
                     when (duration) {
                         LONG_DURATION -> {
-                            val timer = object: CountDownTimer(5000, 1000) {
+                            val timer = object : CountDownTimer(5000, 1000) {
                                 override fun onTick(millisUntilFinished: Long) {
                                     toast.show()
                                 }
@@ -796,7 +593,7 @@ class MotionToast {
 
                         }
                         SHORT_DURATION -> {
-                            val timer = object: CountDownTimer(3000, 1000) {
+                            val timer = object : CountDownTimer(3000, 1000) {
                                 override fun onTick(millisUntilFinished: Long) {
                                     toast.show()
                                 }
@@ -808,7 +605,7 @@ class MotionToast {
                             timer.start()
                         }
                         else -> {
-                            val timer = object: CountDownTimer(2000, 1000) {
+                            val timer = object : CountDownTimer(2000, 1000) {
                                 override fun onTick(millisUntilFinished: Long) {
                                     toast.show()
                                 }
@@ -829,7 +626,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Delete
-                TOAST_DELETE ->{
+                TOAST_DELETE -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -838,18 +635,25 @@ class MotionToast {
                     )
 
 
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,R.anim.pulse)
+                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList = ContextCompat.getColorStateList(context, R.color.delete_color)
+                    layout.colorView.backgroundTintList =
+                        ContextCompat.getColorStateList(context, R.color.delete_color)
 
 
-                    val drawable = ContextCompat.getDrawable(context, R.drawable.toast_round_background)
+                    val drawable =
+                        ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
                         ContextCompat.getColor(context, R.color.delete_bg_color),
                         PorterDuff.Mode.MULTIPLY
                     )
                     layout.background = drawable
-                    layout.custom_toast_text.setTextColor(ContextCompat.getColor(context, R.color.delete_color))
+                    layout.custom_toast_text.setTextColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.delete_color
+                        )
+                    )
                     layout.custom_toast_text.text = TOAST_DELETE
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
@@ -857,45 +661,21 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object: CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object: CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object: CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -942,45 +722,21 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -1050,45 +806,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1139,45 +871,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1228,45 +936,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1317,45 +1001,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1407,45 +1067,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1497,45 +1133,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1547,12 +1159,8 @@ class MotionToast {
                     // Setting layout to toast
                     toast.view = layout
                     toast.show()
-
                 }
-
-
             }
-
         }
 
         // all dark toast CTA
@@ -1613,45 +1221,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1707,45 +1291,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1801,45 +1361,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1895,45 +1431,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1990,45 +1502,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -2085,45 +1573,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -2206,45 +1670,21 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -2290,47 +1730,21 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
-
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
-
+                    timer.start()
 
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
@@ -2374,45 +1788,21 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
 
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
@@ -2456,45 +1846,21 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -2539,45 +1905,21 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -2624,45 +1966,21 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
-                    when (duration) {
-                        LONG_DURATION -> {
-                            val timer = object : CountDownTimer(5000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-
+                    val durationMillis = when (duration) {
+                        LONG_DURATION -> 5000L
+                        SHORT_DURATION -> 3000L
+                        else -> 2000L
+                    }
+                    val timer = object : CountDownTimer(durationMillis, 1000) {
+                        override fun onTick(millisUntilFinished: Long) {
+                            toast.show()
                         }
-                        SHORT_DURATION -> {
-                            val timer = object : CountDownTimer(3000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
 
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
-                        }
-                        else -> {
-                            val timer = object : CountDownTimer(2000, 1000) {
-                                override fun onTick(millisUntilFinished: Long) {
-                                    toast.show()
-                                }
-
-                                override fun onFinish() {
-                                    toast.cancel()
-                                }
-                            }
-                            timer.start()
+                        override fun onFinish() {
+                            toast.cancel()
                         }
                     }
+                    timer.start()
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -2671,16 +1989,8 @@ class MotionToast {
                     toast.view = layout//setting the view of custom toast layout
 //                    layout.animate().alpha(0f).duration = 3000
                     toast.show()
-
                 }
-
-
             }
-
         }
-
-
-
     }
-
 }
