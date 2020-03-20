@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 MotionToast.GRAVITY_BOTTOM,
                 MotionToast.LONG_DURATION,
                 ResourcesCompat.getFont(this,R.font.helvetica_regular))
+
             }
             R.id.errorBtn -> {
                 MotionToast.createToast(this,"Profile Update Failed!",
@@ -77,12 +78,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
-            }
-            else -> {
-                MotionToast.infoToast(this, "You have no buttons!",
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.SHORT_DURATION,
-                    ResourcesCompat.getFont(this,R.font.helvetica_regular))
             }
         }
 
@@ -144,14 +139,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     MotionToast.TOAST_NO_INTERNET,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this, R.font.helvetica_regular)
-                )
-            }
-            else -> {
-                MotionToast.infoToast(
-                    this, "You have no buttons!",
-                    MotionToast.GRAVITY_BOTTOM,
-                    MotionToast.SHORT_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
             }
