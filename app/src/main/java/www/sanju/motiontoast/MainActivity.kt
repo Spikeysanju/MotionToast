@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 GRAVITY_BOTTOM,
                 LONG_DURATION,
                 ResourcesCompat.getFont(this,R.font.helvetica_regular))
+
             }
             R.id.errorBtn -> {
                 MotionToast.createToast(this,"Profile Update Failed!",
@@ -92,7 +93,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
 
         when (v!!.id) {
             R.id.successBtn -> {
-                MotionToast.darkColorToast(
+                MotionToast.darkToast(
                     this, "Profile Completed!",
                     TOAST_SUCCESS,
                     GRAVITY_BOTTOM,
@@ -101,7 +102,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 )
             }
             R.id.errorBtn -> {
-                MotionToast.darkColorToast(
+                MotionToast.darkToast(
                     this, "Profile Update Failed!",
                     TOAST_ERROR,
                     GRAVITY_BOTTOM,
@@ -111,7 +112,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             }
             R.id.warningBtn -> {
 
-                MotionToast.darkColorToast(
+                MotionToast.darkToast(
                     this, "Please Fill All The Details!",
                     TOAST_WARNING,
                     GRAVITY_BOTTOM,
@@ -121,7 +122,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             }
             R.id.infoBtn -> {
 
-                MotionToast.darkColorToast(
+                MotionToast.darkToast(
                     this, "Dark ui testing here!",
                     TOAST_INFO,
                     GRAVITY_BOTTOM,
@@ -130,7 +131,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 )
             }
             R.id.deleteBtn -> {
-                MotionToast.darkColorToast(
+                MotionToast.darkToast(
                     this, "Profile Deleted!",
                     TOAST_DELETE,
                     GRAVITY_BOTTOM,
@@ -139,7 +140,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 )
             }
             R.id.noInternetBtn -> {
-                MotionToast.darkColorToast(
+                MotionToast.darkToast(
                     this, "Please turn on internet connection!",
                     TOAST_NO_INTERNET,
                     GRAVITY_BOTTOM,

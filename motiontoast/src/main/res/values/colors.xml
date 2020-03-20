@@ -21,6 +21,7 @@
 
     <!--    Dark Toast bg-->
     <color name="dark_bg_color">#2F3032</color>
+    <color name="success_title_color">#17B978</color>
 
 
 </resources>

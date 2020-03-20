@@ -19,6 +19,7 @@ class MotionToast {
 
         private lateinit var layoutInflater: LayoutInflater
 
+
         fun warningToast(context: Activity, message: String, position: Int, duration: Int, font: Typeface?) {
 
             val iconDrawable = R.drawable.ic_warning_yellow
@@ -106,6 +107,7 @@ class MotionToast {
             }
 
         }
+
 
         // all toast CTA
         fun createToast(context: Activity, message: String, style: String, position: Int, duration: Int, font: Typeface?) {
@@ -356,6 +358,7 @@ class MotionToast {
             when (style) {
                 // Function for Toast Success
                 TOAST_SUCCESS -> {
+
                     val iconDrawable = R.drawable.ic_check_green
                     val colorFilter = R.color.dark_bg_color
                     val textColor = ContextCompat.getColor(context, R.color.success_color)
