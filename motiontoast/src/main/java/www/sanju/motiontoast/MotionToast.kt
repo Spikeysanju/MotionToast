@@ -7,6 +7,7 @@ import android.graphics.PorterDuffColorFilter
 import android.graphics.Typeface
 import android.os.CountDownTimer
 import android.view.LayoutInflater
+import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -39,13 +40,7 @@ class MotionToast {
             val toast = Toast(context.applicationContext)
             setDuration(duration, toast)
 
-            if (position == GRAVITY_BOTTOM) {
-                toast.setGravity(position, 0, 100)
-            } else {
-                toast.setGravity(position, 0, 0)
-            }
-            toast.view = layout//setting the view of custom toast layout
-            toast.show()
+            setToastGravity(position, toast, layout)
         }
 
         fun errorToast(context: Activity, message: String, position: Int, duration: Int,font: Typeface?) {
@@ -81,13 +76,7 @@ class MotionToast {
 
             setDuration(duration, toast)
 
-            if (position == GRAVITY_BOTTOM) {
-                toast.setGravity(position, 0, 100)
-            } else {
-                toast.setGravity(position, 0, 0)
-            }
-            toast.view = layout//setting the view of custom toast layout
-            toast.show()
+            setToastGravity(position, toast, layout)
         }
         fun successToast(context: Activity, message: String, position: Int, duration: Int,font: Typeface?) {
             layoutInflater = LayoutInflater.from(context)
@@ -119,13 +108,7 @@ class MotionToast {
             val toast = Toast(context.applicationContext)
             setDuration(duration, toast)
 
-            if (position == GRAVITY_BOTTOM) {
-                toast.setGravity(position, 0, 100)
-            } else {
-                toast.setGravity(position, 0, 0)
-            }
-            toast.view = layout//setting the view of custom toast layout
-            toast.show()
+            setToastGravity(position, toast, layout)
         }
         fun infoToast(context: Activity, message: String, position: Int, duration: Int,font: Typeface?) {
             layoutInflater = LayoutInflater.from(context)
@@ -159,13 +142,8 @@ class MotionToast {
             }
             val toast = Toast(context.applicationContext)
             setDuration(duration, toast)
-            if (position == GRAVITY_BOTTOM) {
-                toast.setGravity(position, 0, 100)
-            } else {
-                toast.setGravity(position, 0, 0)
-            }
-            toast.view = layout//setting the view of custom toast layout
-            toast.show()
+
+            setToastGravity(position, toast, layout)
         }
         fun deleteToast(context: Activity,message: String, style:String, position: Int, duration: Int,font: Typeface?) {
             layoutInflater = LayoutInflater.from(context)
@@ -202,13 +180,7 @@ class MotionToast {
                 val toast = Toast(context.applicationContext)
                 setDuration(duration, toast)
 
-                if (position == GRAVITY_BOTTOM) {
-                    toast.setGravity(position, 0, 100)
-                } else {
-                    toast.setGravity(position, 0, 0)
-                }
-                toast.view = layout//setting the view of custom toast layout
-                toast.show()
+                setToastGravity(position, toast, layout)
             } else {
                 layout.custom_toast_image.setImageDrawable(
                     ContextCompat.getDrawable(
@@ -303,15 +275,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Error
                 TOAST_ERROR ->{
@@ -341,13 +305,7 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
                     setDuration(duration, toast)
 
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-                    toast.view = layout//setting the view of custom toast layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Warning
                 TOAST_WARNING ->{
@@ -385,13 +343,7 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
                     setDuration(duration, toast)
 
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-                    toast.view = layout//setting the view of custom toast layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Info
                 TOAST_INFO -> {
@@ -466,13 +418,7 @@ class MotionToast {
                             timer.start()
                         }
                     }
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-                    toast.view = layout//setting the view of custom toast layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Delete
                 TOAST_DELETE -> {
@@ -512,14 +458,7 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
                     setDuration(duration, toast)
 
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-                    toast.view = layout//setting the view of custom toast layout
-//                    layout.animate().alpha(0f).duration = 3000
-                    toast.show()
+                    setToastGravity(position, toast, layout)
 
                 }
                 // CTA for Toast No Internet
@@ -559,17 +498,9 @@ class MotionToast {
                     }
                     val toast = Toast(context.applicationContext)
                     setDuration(duration, toast)
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-                    toast.view = layout//setting the view of custom toast layout
-//                    layout.animate().alpha(0f).duration = 3000
-                    toast.show()
 
+                    setToastGravity(position, toast, layout)
                 }
-
 
             }
 
@@ -631,15 +562,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Error
                 TOAST_ERROR -> {
@@ -683,15 +606,7 @@ class MotionToast {
 
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Warning
                 TOAST_WARNING -> {
@@ -734,15 +649,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Info
                 TOAST_INFO -> {
@@ -785,15 +692,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Delete
                 TOAST_DELETE -> {
@@ -837,15 +736,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
 
                 }
                 // CTA for Toast No Internet
@@ -889,15 +780,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
             }
         }
@@ -963,15 +846,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Error
                 TOAST_ERROR -> {
@@ -1019,15 +894,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Warning
                 TOAST_WARNING -> {
@@ -1075,15 +942,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Info
                 TOAST_INFO -> {
@@ -1131,15 +990,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Delete
                 TOAST_DELETE -> {
@@ -1188,15 +1039,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
 
                 }
                 // CTA for Toast No Internet
@@ -1245,15 +1088,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
 
                 }
 
@@ -1328,15 +1163,7 @@ class MotionToast {
                     setDuration(duration, toast)
 
                     // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.show()
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Error
                 TOAST_ERROR -> {
@@ -1371,15 +1198,12 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
+
+                    // Setting Toast Duration
                     setDuration(duration, toast)
 
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-                    toast.view = layout//setting the view of custom toast layout
-                    toast.show()
+                    // Setting Toast Gravity
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Warning
                 TOAST_WARNING -> {
@@ -1415,15 +1239,12 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
+
+                    // Setting Toast Duration
                     setDuration(duration, toast)
 
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-                    toast.view = layout//setting the view of custom toast layout
-                    toast.show()
+                    // Setting Toast Gravity
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Info
                 TOAST_INFO -> {
@@ -1459,15 +1280,12 @@ class MotionToast {
                         layout.custom_toast_description.typeface = font
                     }
                     val toast = Toast(context.applicationContext)
+
+                    // Setting Toast Duration
                     setDuration(duration, toast)
 
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-                    toast.view = layout//setting the view of custom toast layout
-                    toast.show()
+                    // Setting Toast Gravity
+                    setToastGravity(position, toast, layout)
                 }
                 // CTA for Toast Delete
                 TOAST_DELETE -> {
@@ -1507,14 +1325,7 @@ class MotionToast {
                     val toast = Toast(context.applicationContext)
                     setDuration(duration, toast)
 
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-                    toast.view = layout//setting the view of custom toast layout
-//                    layout.animate().alpha(0f).duration = 3000
-                    toast.show()
+                    setToastGravity(position, toast, layout)
 
                 }
                 // CTA for Toast No Internet
@@ -1554,19 +1365,35 @@ class MotionToast {
                     }
                     val toast = Toast(context.applicationContext)
                     setDuration(duration, toast)
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else {
-                        toast.setGravity(position, 0, 0)
-                    }
-                    toast.view = layout//setting the view of custom toast layout
-//                    layout.animate().alpha(0f).duration = 3000
-                    toast.show()
+
+                    setToastGravity(position, toast, layout)
                 }
             }
         }
 
-        // Functions
+        /**
+         * Setting the Toast's Gravity.
+         * @position -> Where the Toast will be displayed.
+         * @toast -> Current toast,
+         * @layout -> Custom Layout used on the toast.
+         */
+        private fun setToastGravity(position: Int, toast: Toast, layout: View?) {
+            if (position == GRAVITY_BOTTOM) {
+                toast.setGravity(position, 0, 100)
+            } else {
+                toast.setGravity(position, 0, 0)
+            }
+
+            // Setting layout to toast
+            toast.view = layout
+            toast.show()
+        }
+
+        /**
+         * Setting The Toast's Duration.
+         * @duration -> Time that the toast should stay visible.
+         * @toast -> Current toast.
+         */
         private fun setDuration(duration: Int, toast: Toast) {
             val durationMillis = when (duration) {
                 LONG_DURATION -> 5000L
