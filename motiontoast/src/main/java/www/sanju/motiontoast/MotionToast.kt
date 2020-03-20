@@ -33,6 +33,7 @@ class MotionToast {
 
         private lateinit var layoutInflater: LayoutInflater
 
+
         // all toast CTA
         fun createToast(context: Activity,message: String, style:String, position: Int, duration: Int,font: Typeface?) {
             layoutInflater = LayoutInflater.from(context)
@@ -873,11 +874,11 @@ class MotionToast {
 
                     layout.background = drawable
 
-                    // Setting up the color for title & Message text
+
                     layout.color_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.success_color
+                            R.color.success_title_color
                         )
                     )
                     layout.color_toast_text.text = TOAST_SUCCESS
