@@ -17,33 +17,40 @@ class MotionToast {
     companion object {
 
 
-        val LONG_DURATION = 5000 // 5 seconds
-        val SHORT_DURATION = 2000 // 2 seconds
-        val TOAST_SUCCESS = "SUCCESS"
-        val TOAST_ERROR = "FAILED"
-        val TOAST_WARNING = "WARNING"
-        val TOAST_INFO = "INFO"
-        val TOAST_DELETE = "DELETE"
-        val TOAST_NO_INTERNET = "NO INTERNET"
+        const val LONG_DURATION = 5000 // 5 seconds
+        const val SHORT_DURATION = 2000 // 2 seconds
+        const val TOAST_SUCCESS = "SUCCESS"
+        const val TOAST_ERROR = "FAILED"
+        const val TOAST_WARNING = "WARNING"
+        const val TOAST_INFO = "INFO"
+        const val TOAST_DELETE = "DELETE"
+        const val TOAST_NO_INTERNET = "NO INTERNET"
 
 
-        val GRAVITY_TOP = 48
-        val GRAVITY_CENTER = 20
-        val GRAVITY_BOTTOM = 80
+        const val GRAVITY_TOP = 48
+        const val GRAVITY_CENTER = 20
+        const val GRAVITY_BOTTOM = 80
 
         private lateinit var layoutInflater: LayoutInflater
 
 
         // all toast CTA
-        fun createToast(context: Activity,message: String, style:String, position: Int, duration: Int,font: Typeface?) {
+        fun createToast(
+            context: Activity,
+            message: String,
+            style: String,
+            position: Int,
+            duration: Int,
+            font: Typeface?
+        ) {
             layoutInflater = LayoutInflater.from(context)
             val layout = layoutInflater.inflate(
                 R.layout.motion_toast,
                 (context).findViewById(R.id.motion_toast_view)
             )
-            when(style){
+            when (style) {
                 // Function for Toast Success
-                TOAST_SUCCESS ->{
+                TOAST_SUCCESS -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -52,14 +59,16 @@ class MotionToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,R.anim.pulse)
+                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
                     // Background tint color for side view
-                    layout.colorView.backgroundTintList = ContextCompat.getColorStateList(context, R.color.success_color)
+                    layout.colorView.backgroundTintList =
+                        ContextCompat.getColorStateList(context, R.color.success_color)
 
                     // round background color
-                    val drawable = ContextCompat.getDrawable(context, R.drawable.toast_round_background)
+                    val drawable =
+                        ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
                         ContextCompat.getColor(context, R.color.success_bg_color),
                         PorterDuff.Mode.MULTIPLY
@@ -68,7 +77,12 @@ class MotionToast {
                     layout.background = drawable
 
                     // Setting up the color for title & Message text
-                    layout.custom_toast_text.setTextColor(ContextCompat.getColor(context, R.color.success_color))
+                    layout.custom_toast_text.setTextColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.success_color
+                        )
+                    )
                     layout.custom_toast_text.text = TOAST_SUCCESS
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
@@ -110,24 +124,31 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Error
-                TOAST_ERROR ->{
+                TOAST_ERROR -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_error_
                         )
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,R.anim.pulse)
+                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList = ContextCompat.getColorStateList(context, R.color.error_color)
+                    layout.colorView.backgroundTintList =
+                        ContextCompat.getColorStateList(context, R.color.error_color)
 
-                    val drawable = ContextCompat.getDrawable(context, R.drawable.toast_round_background)
+                    val drawable =
+                        ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
                         ContextCompat.getColor(context, R.color.error_bg_color),
                         PorterDuff.Mode.MULTIPLY
                     )
                     layout.background = drawable
-                    layout.custom_toast_text.setTextColor(ContextCompat.getColor(context, R.color.error_color))
+                    layout.custom_toast_text.setTextColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.error_color
+                        )
+                    )
                     layout.custom_toast_text.text = TOAST_ERROR
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
@@ -160,14 +181,14 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Warning
-                TOAST_WARNING ->{
+                TOAST_WARNING -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_warning_yellow
                         )
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,R.anim.pulse)
+                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, R.color.warning_color)

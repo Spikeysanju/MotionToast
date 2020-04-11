@@ -56,8 +56,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             }
             R.id.infoBtn ->{
 
-                MotionToast.createToast(
-                    this, "Dark ui testing here!",
+                MotionToast.createColorToast(
+                    this, "Color Toast testing here!",
                     MotionToast.TOAST_INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
