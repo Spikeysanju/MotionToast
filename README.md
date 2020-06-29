@@ -1,8 +1,14 @@
 # Motion Toast - A Beautiful Toast Library for Android Kotlin 🤩🔥 
 
 [![platform](https://img.shields.io/badge/platform-Android-yellow.svg)](https://www.android.com)
-[![API](https://img.shields.io/badge/API-11%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=22)
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
+[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
+![GitHub stars](https://img.shields.io/github/stars/SpikeySanju/MotionToast?style=social)
+![GitHub forks](https://img.shields.io/github/forks/SpikeySanju/MotionToast?label=Fork&style=social)
+![Repo size](https://img.shields.io/github/repo-size/SpikeySanju/MotionToast?style=social)
+![GitHub follow](https://img.shields.io/github/followers/SpikeySanju?label=Follow&style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/sanjay_spikey?label=Twitter&style=social)
+
 
 A Beautiful Multipurpose Motion Toast Library in Android using Kotlin 😍
 
