@@ -2,7 +2,7 @@
 
 [![platform](https://img.shields.io/badge/platform-Android-yellow.svg)](https://www.android.com)
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
-[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub license](https://img.shields.io/badge/License-Apache2.0-blue.svg)](LICENSE)
 ![GitHub stars](https://img.shields.io/github/stars/SpikeySanju/MotionToast?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/SpikeySanju/MotionToast?label=Fork&style=social)
 ![Repo size](https://img.shields.io/github/repo-size/SpikeySanju/MotionToast?style=social)
