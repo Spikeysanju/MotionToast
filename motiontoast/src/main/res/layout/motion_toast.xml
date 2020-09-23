@@ -12,7 +12,6 @@
         android:layout_height="100dp"
         android:background="@drawable/color_view_background" />
 
-
     <ImageView
         android:id="@+id/custom_toast_image"
         android:layout_width="40dp"
@@ -20,7 +19,6 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="25dp"
         android:src="@drawable/ic_info_yellow" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +28,6 @@
         android:layout_marginStart="55dp"
         android:orientation="vertical"
         android:padding="20dp">
-
 
         <TextView
             android:id="@+id/custom_toast_text"
@@ -53,7 +50,6 @@
             android:text="Hello this is demo warning!"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
-
     </LinearLayout>
 
 </RelativeLayout>

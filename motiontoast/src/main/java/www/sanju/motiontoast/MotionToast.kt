@@ -31,6 +31,25 @@ class MotionToast {
 
         private lateinit var layoutInflater: LayoutInflater
 
+        fun config(
+            context: Activity,
+            successColor: Int = R.color.success_color,
+            errorColor: Int = R.color.error_color,
+            warningColor: Int = R.color.warning_color,
+            infoColor: Int = R.color.info_color
+        ) {
+            //Things the developer might want to customize:
+            //Color of Success, Error, warning and info icon/background
+            //Title text (Alternative to WARNING, ERROR, etc.)
+            //Color of text (Default is black)
+
+            //Important: Make all settings optional, add default value
+
+            //Things to consider: Create separate methods fdr each setting (e.g. setSuccessColor())
+
+
+        }
+
         // all toast CTA
         fun createToast(
             context: Activity,
@@ -54,6 +73,13 @@ class MotionToast {
                             R.drawable.ic_check_green
                         )
                     )
+
+                    layout.custom_toast_image.setColorFilter(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.colorAccent
+                        ), android.graphics.PorterDuff.Mode.MULTIPLY
+                    );
 
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
