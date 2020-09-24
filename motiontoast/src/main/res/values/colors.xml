@@ -11,6 +11,14 @@
     <color name="info_color">#0340DA</color>
     <color name="delete_color">#0288D1</color>
 
+
+    <!--    Custom Colors-->
+    <color name="custom_warning_color">#FFFF00</color>
+    <color name="custom_error_color">#800000</color>
+    <color name="custom_success_color">#00FF00</color>
+    <color name="custom_info_color">#00008B</color>
+    <color name="custom_delete_color">#ADD8E6</color>
+
     <!--    Background Transparent Colors-->
     <color name="warning_bg_color">#33FBC02D</color>
     <color name="error_bg_color">#33D32F2F</color>
