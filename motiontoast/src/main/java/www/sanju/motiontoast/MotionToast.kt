@@ -94,7 +94,7 @@ class MotionToast {
 
                     // Background tint color for side view
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.success_color)
+                        ContextCompat.getColorStateList(context, successToastColor)
 
                     // round background color
                     val drawable =
@@ -110,7 +110,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.success_color
+                            successToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_SUCCESS
@@ -164,7 +164,7 @@ class MotionToast {
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.error_color)
+                        ContextCompat.getColorStateList(context, errorToastColor)
 
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
@@ -176,7 +176,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.error_color
+                            errorToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_ERROR
@@ -221,7 +221,7 @@ class MotionToast {
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.warning_color)
+                        ContextCompat.getColorStateList(context, warningToastColor)
 
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
@@ -234,7 +234,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.warning_color
+                            warningToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_WARNING
@@ -280,7 +280,7 @@ class MotionToast {
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.info_color)
+                        ContextCompat.getColorStateList(context, infoToastColor)
 
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
@@ -292,7 +292,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.info_color
+                            infoToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_INFO
@@ -362,7 +362,7 @@ class MotionToast {
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.delete_color)
+                        ContextCompat.getColorStateList(context, deleteToastColor)
 
 
                     val drawable =
@@ -375,7 +375,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.delete_color
+                            deleteToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_DELETE
@@ -423,7 +423,7 @@ class MotionToast {
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.warning_color)
+                        ContextCompat.getColorStateList(context, warningToastColor)
 
 
                     val drawable =
@@ -436,7 +436,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.warning_color
+                            warningToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_NO_INTERNET
@@ -506,7 +506,7 @@ class MotionToast {
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context, R.color.success_color),
+                        ContextCompat.getColor(context, successToastColor),
                         PorterDuff.Mode.MULTIPLY
                     )
 
@@ -571,7 +571,7 @@ class MotionToast {
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context, R.color.error_color),
+                        ContextCompat.getColor(context, errorToastColor),
                         PorterDuff.Mode.MULTIPLY
                     )
 
@@ -636,7 +636,7 @@ class MotionToast {
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context, R.color.warning_color),
+                        ContextCompat.getColor(context, warningToastColor),
                         PorterDuff.Mode.MULTIPLY
                     )
 
@@ -701,7 +701,7 @@ class MotionToast {
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context, R.color.info_color),
+                        ContextCompat.getColor(context, infoToastColor),
                         PorterDuff.Mode.MULTIPLY
                     )
 
@@ -767,7 +767,7 @@ class MotionToast {
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context, R.color.delete_color),
+                        ContextCompat.getColor(context, deleteToastColor),
                         PorterDuff.Mode.MULTIPLY
                     )
 
@@ -833,7 +833,7 @@ class MotionToast {
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context, R.color.warning_color),
+                        ContextCompat.getColor(context, warningToastColor),
                         PorterDuff.Mode.MULTIPLY
                     )
 
@@ -996,7 +996,7 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.error_color
+                            errorToastColor
                         )
                     )
                     layout.color_toast_text.text = TOAST_ERROR
@@ -1066,7 +1066,7 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.warning_color
+                            warningToastColor
                         )
                     )
                     layout.color_toast_text.text = TOAST_WARNING
@@ -1136,7 +1136,7 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.info_color
+                            infoToastColor
                         )
                     )
                     layout.color_toast_text.text = TOAST_INFO
@@ -1207,7 +1207,7 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.delete_color
+                            deleteToastColor
                         )
                     )
                     layout.color_toast_text.text = TOAST_DELETE
@@ -1278,7 +1278,7 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.warning_color
+                            warningToastColor
                         )
                     )
                     layout.color_toast_text.text = TOAST_NO_INTERNET
@@ -1359,7 +1359,7 @@ class MotionToast {
 
                     // Background tint color for side view
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.success_color)
+                        ContextCompat.getColorStateList(context, successToastColor)
 
                     // round background color
                     val drawable =
@@ -1375,7 +1375,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.success_color
+                            successToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_SUCCESS
@@ -1429,7 +1429,7 @@ class MotionToast {
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.error_color)
+                        ContextCompat.getColorStateList(context, errorToastColor)
 
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
@@ -1441,7 +1441,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.error_color
+                            errorToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_ERROR
@@ -1486,7 +1486,7 @@ class MotionToast {
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.warning_color)
+                        ContextCompat.getColorStateList(context, warningToastColor)
 
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
@@ -1499,7 +1499,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.warning_color
+                            warningToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_WARNING
@@ -1545,7 +1545,7 @@ class MotionToast {
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.info_color)
+                        ContextCompat.getColorStateList(context, infoToastColor)
 
                     val drawable =
                         ContextCompat.getDrawable(context, R.drawable.toast_round_background)
@@ -1557,7 +1557,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.info_color
+                            infoToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_INFO
@@ -1603,7 +1603,7 @@ class MotionToast {
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.delete_color)
+                        ContextCompat.getColorStateList(context, deleteToastColor)
 
 
                     val drawable =
@@ -1616,7 +1616,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.delete_color
+                            deleteToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_DELETE
@@ -1664,7 +1664,7 @@ class MotionToast {
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context, R.color.warning_color)
+                        ContextCompat.getColorStateList(context, warningToastColor)
 
 
                     val drawable =
@@ -1677,7 +1677,7 @@ class MotionToast {
                     layout.custom_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.warning_color
+                            warningToastColor
                         )
                     )
                     layout.custom_toast_text.text = TOAST_NO_INTERNET
