@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import kotlinx.android.synthetic.main.full_color_toast.view.*
 import kotlinx.android.synthetic.main.motion_toast.view.*
 
@@ -88,13 +89,10 @@ class MotionToast {
                             R.drawable.ic_check_green
                         )
                     )
-
-                    layout.custom_toast_image.setColorFilter(
-                        ContextCompat.getColor(
-                            context,
-                            R.color.colorAccent
-                        ), android.graphics.PorterDuff.Mode.MULTIPLY
-                    );
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, successToastColor)
+                    )
 
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
@@ -169,6 +167,10 @@ class MotionToast {
                             R.drawable.ic_error_
                         )
                     )
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, errorToastColor)
+                    )
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
@@ -225,6 +227,10 @@ class MotionToast {
                             context,
                             R.drawable.ic_warning_yellow
                         )
+                    )
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, warningToastColor)
                     )
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
@@ -283,6 +289,10 @@ class MotionToast {
                             context,
                             R.drawable.ic_info_blue
                         )
+                    )
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, infoToastColor)
                     )
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
@@ -365,8 +375,10 @@ class MotionToast {
                             R.drawable.ic_delete_
                         )
                     )
-
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, deleteToastColor)
+                    )
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
@@ -426,8 +438,10 @@ class MotionToast {
                             R.drawable.ic_no_internet
                         )
                     )
-
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, warningToastColor)
+                    )
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
