@@ -31,23 +31,30 @@ class MotionToast {
 
         private lateinit var layoutInflater: LayoutInflater
 
-        fun config(
-            context: Activity,
-            successColor: Int = R.color.success_color,
-            errorColor: Int = R.color.error_color,
-            warningColor: Int = R.color.warning_color,
-            infoColor: Int = R.color.info_color
-        ) {
-            //Things the developer might want to customize:
-            //Color of Success, Error, warning and info icon/background
-            //Title text (Alternative to WARNING, ERROR, etc.)
-            //Color of text (Default is black)
+        var successToastColor: Int = R.color.success_color
+        var errorToastColor: Int = R.color.error_color
+        var warningToastColor: Int = R.color.warning_color
+        var infoToastColor: Int = R.color.info_color
+        var deleteToastColor: Int = R.color.delete_color
 
-            //Important: Make all settings optional, add default value
+        fun setSuccessColor(color: Int) {
+            successToastColor = color
+        }
 
-            //Things to consider: Create separate methods fdr each setting (e.g. setSuccessColor())
+        fun setErrorColor(color: Int) {
+            errorToastColor = color
+        }
 
+        fun setWarningColor(color: Int) {
+            warningToastColor = color
+        }
 
+        fun setInfoColor(color: Int) {
+            infoToastColor = color
+        }
+
+        fun setDeleteColor(color: Int) {
+            deleteToastColor = color
         }
 
         // all toast CTA
