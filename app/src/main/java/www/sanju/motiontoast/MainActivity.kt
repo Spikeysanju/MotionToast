@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import kotlinx.android.synthetic.main.activity_main.*
 
-
 class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClickListener,
     CompoundButton.OnCheckedChangeListener {
 
@@ -38,11 +37,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             MotionToast.setDeleteColor(R.color.custom_delete_color)
             MotionToast.setWarningColor(R.color.custom_warning_color)
             MotionToast.setInfoColor(R.color.custom_info_color)
+            MotionToast.setSuccessBackgroundColor(R.color.success_bg_color)
+            MotionToast.setErrorBackgroundColor(R.color.error_bg_color)
+            MotionToast.setDeleteBackgroundColor(R.color.delete_bg_color)
+            MotionToast.setWarningBackgroundColor(R.color.warning_bg_color)
+            MotionToast.setInfoBackgroundColor(R.color.info_bg_color)
         } else {
             MotionToast.resetToastColors()
         }
     }
-
 
     override fun onClick(v: View?) {
         when (v!!.id) {
@@ -54,7 +57,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
-
             }
             R.id.errorBtn -> {
                 MotionToast.createToast(
@@ -76,7 +78,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 )
             }
             R.id.infoBtn -> {
-
                 MotionToast.createColorToast(
                     this, "Color Toast testing here!",
                     MotionToast.TOAST_INFO,
@@ -108,7 +109,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
     }
 
     override fun onLongClick(v: View?): Boolean {
-
         when (v!!.id) {
             R.id.successBtn -> {
                 MotionToast.darkToast(
