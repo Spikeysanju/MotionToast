@@ -37,6 +37,14 @@ class MotionToast {
         var infoToastColor: Int = R.color.info_color
         var deleteToastColor: Int = R.color.delete_color
 
+        fun resetToastColors() {
+            successToastColor = R.color.success_color
+            errorToastColor = R.color.error_color
+            warningToastColor = R.color.warning_color
+            infoToastColor = R.color.info_color
+            deleteToastColor = R.color.delete_color
+        }
+
         fun setSuccessColor(color: Int) {
             successToastColor = color
         }
