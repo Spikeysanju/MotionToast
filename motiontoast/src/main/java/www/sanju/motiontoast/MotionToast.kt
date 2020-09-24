@@ -50,6 +50,12 @@ class MotionToast {
             warningToastColor = R.color.warning_color
             infoToastColor = R.color.info_color
             deleteToastColor = R.color.delete_color
+
+            successBackgroundToastColor = R.color.success_bg_color
+            errorBackgroundToastColor = R.color.error_bg_color
+            warningBackgroundToastColor = R.color.warning_bg_color
+            infoBackgroundToastColor = R.color.info_bg_color
+            deleteBackgroundToastColor = R.color.delete_bg_color
         }
 
         fun setSuccessColor(color: Int) {
@@ -972,7 +978,10 @@ class MotionToast {
                             R.drawable.ic_check_green
                         )
                     )
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        ContextCompat.getColor(context, successToastColor)
+                    )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.color_toast_image.startAnimation(pulseAnimation)
@@ -986,12 +995,11 @@ class MotionToast {
                     )
 
                     layout.background = drawable
-
-
+                    
                     layout.color_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
-                            R.color.success_title_color
+                            successToastColor
                         )
                     )
                     layout.color_toast_text.text = TOAST_SUCCESS
@@ -1042,7 +1050,10 @@ class MotionToast {
                             R.drawable.ic_error_
                         )
                     )
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        ContextCompat.getColor(context, errorToastColor)
+                    )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.color_toast_image.startAnimation(pulseAnimation)
@@ -1112,7 +1123,10 @@ class MotionToast {
                             R.drawable.ic_warning_yellow
                         )
                     )
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        ContextCompat.getColor(context, warningToastColor)
+                    )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.color_toast_image.startAnimation(pulseAnimation)
@@ -1182,7 +1196,10 @@ class MotionToast {
                             R.drawable.ic_info_blue
                         )
                     )
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        ContextCompat.getColor(context, infoToastColor)
+                    )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.color_toast_image.startAnimation(pulseAnimation)
@@ -1252,8 +1269,10 @@ class MotionToast {
                             R.drawable.ic_delete_
                         )
                     )
-
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        ContextCompat.getColor(context, deleteToastColor)
+                    )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.color_toast_image.startAnimation(pulseAnimation)
@@ -1324,7 +1343,10 @@ class MotionToast {
                             R.drawable.ic_no_internet
                         )
                     )
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        ContextCompat.getColor(context, warningToastColor)
+                    )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.color_toast_image.startAnimation(pulseAnimation)
@@ -1387,12 +1409,8 @@ class MotionToast {
                     toast.show()
 
                 }
-
-
             }
-
         }
-
 
         // all toast CTA
         fun darkColorToast(
@@ -1417,7 +1435,10 @@ class MotionToast {
                             R.drawable.ic_check_green
                         )
                     )
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, successToastColor)
+                    )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
@@ -1491,6 +1512,10 @@ class MotionToast {
                             R.drawable.ic_error_
                         )
                     )
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, errorToastColor)
+                    )
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
@@ -1547,6 +1572,10 @@ class MotionToast {
                             context,
                             R.drawable.ic_warning_yellow
                         )
+                    )
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, warningToastColor)
                     )
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
@@ -1606,6 +1635,10 @@ class MotionToast {
                             R.drawable.ic_info_blue
                         )
                     )
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, infoToastColor)
+                    )
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
@@ -1663,8 +1696,10 @@ class MotionToast {
                             R.drawable.ic_delete_
                         )
                     )
-
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, deleteToastColor)
+                    )
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
@@ -1724,8 +1759,10 @@ class MotionToast {
                             R.drawable.ic_no_internet
                         )
                     )
-
-
+                    DrawableCompat.setTint(
+                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        ContextCompat.getColor(context, warningToastColor)
+                    )
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
