@@ -5,7 +5,6 @@
     <color name="colorAccent">#0340DA</color>
 
     <!--    Background Colors-->
-
     <color name="warning_color">#FBC02D</color>
     <color name="error_color">#D50000</color>
     <color name="success_color">#17B978</color>
