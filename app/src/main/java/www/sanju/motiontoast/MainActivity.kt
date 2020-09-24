@@ -2,17 +2,20 @@ package www.sanju.motiontoast
 
 import android.os.Bundle
 import android.view.View
+import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClickListener,
+    CompoundButton.OnCheckedChangeListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        switch_custom_colors?.setOnCheckedChangeListener(this)
         successBtn.setOnClickListener(this)
         errorBtn.setOnClickListener(this)
         warningBtn.setOnClickListener(this)
@@ -26,49 +29,70 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
         infoBtn.setOnLongClickListener(this)
         deleteBtn.setOnLongClickListener(this)
         noInternetBtn.setOnLongClickListener(this)
-
-
     }
+
+    private fun setToastColors(newColorsEnabled: Boolean) {
+        if (newColorsEnabled) {
+            MotionToast.setSuccessColor(R.color.custom_success_color)
+            MotionToast.setErrorColor(R.color.custom_error_color)
+            MotionToast.setDeleteColor(R.color.custom_delete_color)
+            MotionToast.setWarningColor(R.color.custom_warning_color)
+            MotionToast.setInfoColor(R.color.custom_info_color)
+        } else {
+            MotionToast.resetToastColors()
+        }
+    }
+
 
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.successBtn -> {
-                MotionToast.createToast(this,"Profile Completed!",
-                MotionToast.TOAST_SUCCESS,
-                MotionToast.GRAVITY_BOTTOM,
-                MotionToast.LONG_DURATION,
-                ResourcesCompat.getFont(this,R.font.helvetica_regular))
+                MotionToast.createToast(
+                    this, "Profile Completed!",
+                    MotionToast.TOAST_SUCCESS,
+                    MotionToast.GRAVITY_BOTTOM,
+                    MotionToast.LONG_DURATION,
+                    ResourcesCompat.getFont(this, R.font.helvetica_regular)
+                )
 
             }
             R.id.errorBtn -> {
-                MotionToast.createToast(this,"Profile Update Failed!",
+                MotionToast.createToast(
+                    this, "Profile Update Failed!",
                     MotionToast.TOAST_ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this,R.font.helvetica_regular))         }
-            R.id.warningBtn ->{
+                    ResourcesCompat.getFont(this, R.font.helvetica_regular)
+                )
+            }
+            R.id.warningBtn -> {
 
-                MotionToast.createToast(this,"Please Fill All The Details!",
+                MotionToast.createToast(
+                    this, "Please Fill All The Details!",
                     MotionToast.TOAST_WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this,R.font.helvetica_regular))
+                    ResourcesCompat.getFont(this, R.font.helvetica_regular)
+                )
             }
-            R.id.infoBtn ->{
+            R.id.infoBtn -> {
 
                 MotionToast.createColorToast(
                     this, "Color Toast testing here!",
                     MotionToast.TOAST_INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this,R.font.helvetica_regular))
+                    ResourcesCompat.getFont(this, R.font.helvetica_regular)
+                )
             }
-            R.id.deleteBtn ->{
-                MotionToast.createToast(this,"Profile Deleted!",
+            R.id.deleteBtn -> {
+                MotionToast.createToast(
+                    this, "Profile Deleted!",
                     MotionToast.TOAST_DELETE,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this,R.font.helvetica_regular))
+                    ResourcesCompat.getFont(this, R.font.helvetica_regular)
+                )
             }
             R.id.noInternetBtn -> {
                 MotionToast.createToast(
@@ -145,5 +169,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
         }
 
         return true
+    }
+
+    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+        setToastColors(isChecked)
     }
 }
