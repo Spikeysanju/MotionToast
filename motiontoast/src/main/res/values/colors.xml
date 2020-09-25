@@ -5,12 +5,19 @@
     <color name="colorAccent">#0340DA</color>
 
     <!--    Background Colors-->
-
     <color name="warning_color">#FBC02D</color>
     <color name="error_color">#D50000</color>
     <color name="success_color">#17B978</color>
     <color name="info_color">#0340DA</color>
     <color name="delete_color">#0288D1</color>
+
+
+    <!--    Custom Colors-->
+    <color name="custom_warning_color">#FFFF00</color>
+    <color name="custom_error_color">#800000</color>
+    <color name="custom_success_color">#00FF00</color>
+    <color name="custom_info_color">#00008B</color>
+    <color name="custom_delete_color">#ADD8E6</color>
 
     <!--    Background Transparent Colors-->
     <color name="warning_bg_color">#33FBC02D</color>
@@ -21,7 +28,5 @@
 
     <!--    Dark Toast bg-->
     <color name="dark_bg_color">#2F3032</color>
-    <color name="success_title_color">#17B978</color>
-
 
 </resources>
