@@ -152,7 +152,7 @@ class MotionToast {
                             successToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_SUCCESS else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_SUCCESS else title
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
 
@@ -222,7 +222,7 @@ class MotionToast {
                             errorToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_ERROR else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_ERROR else title
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
                     font?.let {
@@ -284,7 +284,7 @@ class MotionToast {
                             warningToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_WARNING else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_WARNING else title
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
                     font?.let {
@@ -346,7 +346,7 @@ class MotionToast {
                             infoToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_INFO else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_INFO else title
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
                     font?.let {
@@ -430,7 +430,7 @@ class MotionToast {
                             deleteToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_DELETE else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_DELETE else title
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
                     font?.let {
@@ -493,7 +493,7 @@ class MotionToast {
                             warningToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_NO_INTERNET else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_NO_INTERNET else title
                     layout.custom_toast_description.setTextColor(Color.BLACK)
                     layout.custom_toast_description.text = message
                     font?.let {
@@ -573,7 +573,7 @@ class MotionToast {
 
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text = if(title == null) TOAST_SUCCESS else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_SUCCESS else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -641,7 +641,7 @@ class MotionToast {
 
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text = if(title == null) TOAST_ERROR else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_ERROR else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -709,7 +709,7 @@ class MotionToast {
 
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text = if(title == null) TOAST_WARNING else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_WARNING else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -777,7 +777,7 @@ class MotionToast {
 
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text = if(title == null) TOAST_INFO else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_INFO else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -845,7 +845,7 @@ class MotionToast {
 
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text = if(title == null) TOAST_DELETE else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_DELETE else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -914,7 +914,7 @@ class MotionToast {
 
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text = if(title == null) TOAST_NO_INTERNET else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_NO_INTERNET else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -1004,7 +1004,7 @@ class MotionToast {
                             successToastColor
                         )
                     )
-                    layout.color_toast_text.text = if(title == null) TOAST_SUCCESS else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_SUCCESS else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -1077,7 +1077,7 @@ class MotionToast {
                             errorToastColor
                         )
                     )
-                    layout.color_toast_text.text = if(title == null) TOAST_ERROR else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_ERROR else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -1150,7 +1150,7 @@ class MotionToast {
                             warningToastColor
                         )
                     )
-                    layout.color_toast_text.text = if(title == null) TOAST_WARNING else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_WARNING else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -1223,7 +1223,7 @@ class MotionToast {
                             infoToastColor
                         )
                     )
-                    layout.color_toast_text.text = if(title == null) TOAST_INFO else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_INFO else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -1296,7 +1296,7 @@ class MotionToast {
                             deleteToastColor
                         )
                     )
-                    layout.color_toast_text.text = if(title == null) TOAST_DELETE else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_DELETE else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -1370,7 +1370,7 @@ class MotionToast {
                             warningToastColor
                         )
                     )
-                    layout.color_toast_text.text = if(title == null) TOAST_NO_INTERNET else title
+                    layout.color_toast_text.text = if(title.isNullOrBlank()) TOAST_NO_INTERNET else title
                     layout.color_toast_description.setTextColor(Color.WHITE)
                     layout.color_toast_description.text = message
 
@@ -1466,7 +1466,7 @@ class MotionToast {
                             successToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_SUCCESS else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_SUCCESS else title
                     layout.custom_toast_description.setTextColor(Color.WHITE)
                     layout.custom_toast_description.text = message
 
@@ -1536,7 +1536,7 @@ class MotionToast {
                             errorToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_ERROR else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_ERROR else title
                     layout.custom_toast_description.setTextColor(Color.WHITE)
                     layout.custom_toast_description.text = message
                     font?.let {
@@ -1598,7 +1598,7 @@ class MotionToast {
                             warningToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_WARNING else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_WARNING else title
                     layout.custom_toast_description.setTextColor(Color.WHITE)
                     layout.custom_toast_description.text = message
                     font?.let {
@@ -1660,7 +1660,7 @@ class MotionToast {
                             infoToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_INFO else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_INFO else title
                     layout.custom_toast_description.setTextColor(Color.WHITE)
                     layout.custom_toast_description.text = message
                     font?.let {
@@ -1721,7 +1721,7 @@ class MotionToast {
                             deleteToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_DELETE else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_DELETE else title
                     layout.custom_toast_description.setTextColor(Color.WHITE)
                     layout.custom_toast_description.text = message
                     font?.let {
@@ -1784,7 +1784,7 @@ class MotionToast {
                             warningToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if(title == null) TOAST_NO_INTERNET else title
+                    layout.custom_toast_text.text = if(title.isNullOrBlank()) TOAST_NO_INTERNET else title
                     layout.custom_toast_description.setTextColor(Color.WHITE)
                     layout.custom_toast_description.text = message
                     font?.let {
