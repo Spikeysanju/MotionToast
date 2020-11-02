@@ -13,11 +13,13 @@
 
 
     <!--    Custom Colors-->
-    <color name="custom_warning_color">#FFFF00</color>
-    <color name="custom_error_color">#800000</color>
-    <color name="custom_success_color">#00FF00</color>
-    <color name="custom_info_color">#00008B</color>
-    <color name="custom_delete_color">#ADD8E6</color>
+    <color name="custom_warning_color">#FF9800</color>
+    <color name="custom_error_color">#F44336</color>
+    <color name="custom_success_color">#8BC34A</color>
+    <color name="custom_info_color">#2196F3</color>
+    <color name="custom_delete_color">#673AB7</color>
+    <color name="custom_dark_toast">#121212</color>
+
 
     <!--    Background Transparent Colors-->
     <color name="warning_bg_color">#33FBC02D</color>
