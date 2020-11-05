@@ -1810,7 +1810,6 @@ class MotionToast {
                         toast.setGravity(position, 0, 0)
                     }
                     toast.view = layout//setting the view of custom toast layout
-//                    layout.animate().alpha(0f).duration = 3000
                     toast.show()
                 }
             }
