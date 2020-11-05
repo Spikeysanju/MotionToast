@@ -3,7 +3,7 @@
     android:id="@+id/motion_toast_view"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_margin="20dp"
+    android:layout_margin="@dimen/dimen_12"
     android:background="@android:color/white">
 
     <View
@@ -17,7 +17,8 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_centerVertical="true"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="@dimen/dimen_24"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/ic_info_yellow" />
 
     <LinearLayout
@@ -33,23 +34,20 @@
             android:id="@+id/custom_toast_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/custom_toast_image"
-            android:fontFamily="@font/helveticabold"
-            android:text="Warning"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/text_warning"
             android:textAllCaps="true"
             android:textColor="@android:color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
 
         <TextView
             android:id="@+id/custom_toast_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/custom_toast_image"
-            android:fontFamily="@font/helvetica_regular"
-            android:text="Hello this is demo warning!"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/text_mock_description"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
     </LinearLayout>
 
 </RelativeLayout>

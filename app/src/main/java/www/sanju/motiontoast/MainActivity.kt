@@ -111,12 +111,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
     override fun onLongClick(v: View?): Boolean {
         when (v!!.id) {
             R.id.successBtn -> {
-                MotionToast.darkToast(
-                    this, "Profile Completed!",
+                MotionToast.createColorToast(
+                    this,
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                     MotionToast.TOAST_SUCCESS,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this, R.font.helvetica_regular)
+                    ResourcesCompat.getFont(this, R.font.montserrat_regular)
                 )
             }
             R.id.errorBtn -> {
