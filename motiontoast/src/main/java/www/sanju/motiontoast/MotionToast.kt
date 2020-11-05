@@ -14,6 +14,7 @@ import androidx.core.graphics.drawable.DrawableCompat
 import kotlinx.android.synthetic.main.full_color_toast.view.*
 import kotlinx.android.synthetic.main.motion_toast.view.*
 
+@Suppress("DEPRECATION")
 class MotionToast {
     companion object {
 
@@ -995,7 +996,7 @@ class MotionToast {
                     )
 
                     layout.background = drawable
-                    
+
                     layout.color_toast_text.setTextColor(
                         ContextCompat.getColor(
                             context,
