@@ -26,7 +26,7 @@ class MotionToast {
         const val TOAST_INFO = "INFO"
         const val TOAST_DELETE = "DELETE"
         const val TOAST_NO_INTERNET = "NO INTERNET"
-        const val GRAVITY_TOP = 48
+        const val GRAVITY_TOP = 50
         const val GRAVITY_CENTER = 20
         const val GRAVITY_BOTTOM = 80
 

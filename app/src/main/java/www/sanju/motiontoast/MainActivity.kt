@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             R.id.successBtn -> {
                 MotionToast.createColorToast(
                     this,
-                    "",
+                    "Post create 😍",
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                     MotionToast.TOAST_SUCCESS,
                     MotionToast.GRAVITY_BOTTOM,
