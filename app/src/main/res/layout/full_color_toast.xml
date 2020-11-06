@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/color_toast_view"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_margin="10dp"
+    android:layout_margin="@dimen/dimen_24"
     android:background="@drawable/toast_round_background"
     android:backgroundTint="@color/warning_color">
 
@@ -13,42 +14,58 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_centerVertical="true"
-        android:layout_marginStart="15dp"
-        android:padding="5dp"
+        android:layout_marginStart="@dimen/dimen_12"
+        android:background="@drawable/color_view_background"
         android:src="@drawable/ic_warning_yellow"
-        android:background="@drawable/color_view_background" />
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/dimen_8" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/custom_text_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="55dp"
-        android:orientation="vertical"
-        android:padding="20dp">
-
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dimen_12"
+        android:layout_marginEnd="@dimen/dimen_12"
+        android:layout_toEndOf="@id/color_toast_image"
+        android:gravity="start"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/color_toast_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/custom_toast_image"
-            android:fontFamily="@font/helveticabold"
-            android:text="Warning"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginEnd="@dimen/dimen_12"
+            android:fontFamily="@font/montserrat_bold"
+            android:letterSpacing="0.10"
+            android:text="@string/text_warning"
             android:textAllCaps="true"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
             android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            app:layout_constraintStart_toEndOf="@id/color_toast_image"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/color_toast_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/custom_toast_image"
-            android:fontFamily="@font/helvetica_regular"
-            android:text="Hello this is demo warning!"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:layout_marginEnd="@dimen/dimen_12"
+            android:layout_marginBottom="@dimen/dimen_12"
+            android:ellipsize="marquee"
+            android:fontFamily="@font/montserrat_regular"
+            android:maxLines="2"
+            android:text="@string/text_mock_description"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
             android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/color_toast_image"
+            app:layout_constraintTop_toBottomOf="@id/color_toast_text" />
 
     </LinearLayout>
 

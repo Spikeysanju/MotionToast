@@ -1,53 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/motion_toast_view"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_margin="@dimen/dimen_12"
+    android:layout_margin="@dimen/dimen_24"
     android:background="@android:color/white">
 
     <View
         android:id="@+id/colorView"
-        android:layout_width="15dp"
+        android:layout_width="@dimen/dimen_12"
         android:layout_height="100dp"
-        android:background="@drawable/color_view_background" />
+        android:layout_alignParentStart="true"
+        android:background="@drawable/color_view_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/custom_toast_image"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginStart="@dimen/dimen_8"
         android:layout_centerVertical="true"
-        android:layout_marginStart="@dimen/dimen_24"
+        android:layout_toEndOf="@id/colorView"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_info_yellow" />
 
     <LinearLayout
+        android:id="@+id/custom_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="55dp"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dimen_12"
+        android:layout_marginEnd="@dimen/dimen_12"
+        android:layout_toEndOf="@id/custom_toast_image"
+        android:gravity="start"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/custom_toast_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginEnd="@dimen/dimen_12"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/text_warning"
+            android:letterSpacing="0.10"
             android:textAllCaps="true"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
             android:textColor="@android:color/black"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/custom_toast_image"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/custom_toast_description"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:layout_marginEnd="@dimen/dimen_12"
+            android:layout_marginBottom="@dimen/dimen_12"
             android:fontFamily="@font/montserrat_regular"
+            android:ellipsize="marquee"
+            android:maxLines="2"
             android:text="@string/text_mock_description"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
             android:textColor="@android:color/black"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/custom_toast_image"
+            app:layout_constraintTop_toBottomOf="@id/custom_toast_text" />
+
     </LinearLayout>
 
 </RelativeLayout>
