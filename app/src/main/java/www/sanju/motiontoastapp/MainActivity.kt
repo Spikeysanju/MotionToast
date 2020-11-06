@@ -1,4 +1,4 @@
-package www.sanju.motiontoast
+package www.sanju.motiontoastapp
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import kotlinx.android.synthetic.main.activity_main.*
+import www.sanju.motiontoast.MotionToast
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClickListener,
     CompoundButton.OnCheckedChangeListener {
