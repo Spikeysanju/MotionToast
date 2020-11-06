@@ -13,7 +13,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import kotlinx.android.synthetic.main.full_color_toast.view.*
 import kotlinx.android.synthetic.main.motion_toast.view.*
-import www.sanju.motiontoastapp.R
 
 @Suppress("DEPRECATION")
 class MotionToast {

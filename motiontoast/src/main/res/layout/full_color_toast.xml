@@ -25,8 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginStart="@dimen/dimen_12"
-        android:layout_marginEnd="@dimen/dimen_12"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginEnd="@dimen/dimen_8"
         android:layout_toEndOf="@id/color_toast_image"
         android:gravity="start"
         android:orientation="vertical">
