@@ -74,7 +74,7 @@ Add dependency in your app module
 
 ```
 	dependencies {
-	        implementation 'com.github.Spikeysanju:MotionToast:1.3.3.2' 
+	        implementation 'com.github.Spikeysanju:MotionToast:1.3.3.3' 
 	}
 
 ```
@@ -100,7 +100,9 @@ Add dependency in your app module
 
 ### Success Toast
 ```
- MotionToast.createToast(this,"Upload Completed!",
+ MotionToast.createToast(this,
+ 		"Hurray success 😍"
+ 		"Upload Completed successfully!",
                 MotionToast.TOAST_SUCCESS,
                 MotionToast.GRAVITY_BOTTOM,
                 MotionToast.LONG_DURATION,
@@ -110,7 +112,9 @@ Add dependency in your app module
 
 ### Error Toast
 ```
- MotionToast.createToast(this,"Profile Update Failed!",
+ MotionToast.createToast(this,
+ 		    "Failed ☹️"
+ 		    "Profile Update Failed!",
                     MotionToast.TOAST_ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
