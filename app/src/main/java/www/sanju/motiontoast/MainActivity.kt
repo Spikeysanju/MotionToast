@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 MotionToast.createToast(
                     this,
                     "Profile saved",
-                    "Lorem Ipsum is simply dummy this is very simple text",
+                    "Lorem Ipsum is simply dummy this is very simple text Lorem Ipsum is simply dummy this is very simple text Lorem Ipsum is simply dummy this is very simple text",
                     MotionToast.TOAST_SUCCESS,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
