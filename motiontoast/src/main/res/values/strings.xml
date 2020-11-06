@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MotionToast</string>
+    <string name="text_warning">Warning</string>
+    <string name="text_success">Success</string>
+    <string name="text_error">Error</string>
+    <string name="text_info">Info</string>
+    <string name="text_no_internet">No internet connection</string>
+    <string name="text_mock_description">Lorem Ipsum is simply dummy text of the printing</string>
 </resources>

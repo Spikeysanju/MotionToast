@@ -1,4 +1,4 @@
-package www.sanju.motiontoast
+package www.sanju.motiontoastapp
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import kotlinx.android.synthetic.main.activity_main.*
+import www.sanju.motiontoast.MotionToast
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClickListener,
     CompoundButton.OnCheckedChangeListener {
@@ -51,16 +52,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
         when (v!!.id) {
             R.id.successBtn -> {
                 MotionToast.createToast(
-                    this, "Profile Completed!",
+                    this,
+                    "Profile saved",
+                    "Lorem Ipsum is simply dummy this is very simple text Lorem Ipsum is simply dummy this is very simple text Lorem Ipsum is simply dummy this is very simple text",
                     MotionToast.TOAST_SUCCESS,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this, R.font.helvetica_regular)
+                    ResourcesCompat.getFont(this, R.font.montserrat_regular)
                 )
             }
             R.id.errorBtn -> {
                 MotionToast.createToast(
-                    this, "Profile Update Failed!",
+                    this,
+                    "Profile failed",
+                    "Profile Update Failed due to this reason",
                     MotionToast.TOAST_ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -70,7 +75,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             R.id.warningBtn -> {
 
                 MotionToast.createToast(
-                    this, "Please Fill All The Details!",
+                    this,
+                    "",
+                    "Please Fill All The Details!",
                     MotionToast.TOAST_WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -79,7 +86,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             }
             R.id.infoBtn -> {
                 MotionToast.createColorToast(
-                    this, "Color Toast testing here!",
+                    this,
+                    "",
+                    "Color Toast testing here!",
                     MotionToast.TOAST_INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -89,6 +98,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             R.id.deleteBtn -> {
                 MotionToast.createToast(
                     this, "Profile Deleted!",
+                    "",
                     MotionToast.TOAST_DELETE,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -98,6 +108,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             R.id.noInternetBtn -> {
                 MotionToast.createToast(
                     this, "Please turn on internet connection!",
+                    "",
                     MotionToast.TOAST_NO_INTERNET,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -111,17 +122,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
     override fun onLongClick(v: View?): Boolean {
         when (v!!.id) {
             R.id.successBtn -> {
-                MotionToast.darkToast(
-                    this, "Profile Completed!",
+                MotionToast.createColorToast(
+                    this,
+                    "Post create 😍",
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                     MotionToast.TOAST_SUCCESS,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
-                    ResourcesCompat.getFont(this, R.font.helvetica_regular)
+                    ResourcesCompat.getFont(this, R.font.montserrat_regular)
                 )
             }
             R.id.errorBtn -> {
                 MotionToast.darkToast(
-                    this, "Profile Update Failed!",
+                    this,
+                    "",
+                    "Profile Update Failed!",
                     MotionToast.TOAST_ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -130,8 +145,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             }
             R.id.warningBtn -> {
 
-                MotionToast.darkToast(
-                    this, "Please Fill All The Details!",
+                MotionToast.darkColorToast(
+                    this,
+                    "",
+                    "Please Fill All The Details!",
                     MotionToast.TOAST_WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -141,7 +158,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             R.id.infoBtn -> {
 
                 MotionToast.darkToast(
-                    this, "Dark ui testing here!",
+                    this,
+                    "",
+                    "Dark ui testing here!",
                     MotionToast.TOAST_INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -150,7 +169,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             }
             R.id.deleteBtn -> {
                 MotionToast.darkToast(
-                    this, "Profile Deleted!",
+                    this,
+                    "",
+                    "Profile Deleted!",
                     MotionToast.TOAST_DELETE,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
@@ -159,7 +180,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             }
             R.id.noInternetBtn -> {
                 MotionToast.darkToast(
-                    this, "Please turn on internet connection!",
+                    this,
+                    "",
+                    "Please turn on internet connection!",
                     MotionToast.TOAST_NO_INTERNET,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
