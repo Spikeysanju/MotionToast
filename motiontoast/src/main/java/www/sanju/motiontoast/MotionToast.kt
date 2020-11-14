@@ -10,6 +10,7 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
@@ -154,7 +155,7 @@ class MotionToast {
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_SUCCESS else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout)
+                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -199,7 +200,7 @@ class MotionToast {
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_ERROR else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout)
+                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -238,7 +239,7 @@ class MotionToast {
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_WARNING else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout)
+                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -277,7 +278,7 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout)
+                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -316,7 +317,7 @@ class MotionToast {
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_DELETE else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout)
+                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -357,7 +358,7 @@ class MotionToast {
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout)
+                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -367,19 +368,6 @@ class MotionToast {
                     toast.show()
                 }
             }
-        }
-
-        private fun startTimer(duration: Long, toast: Toast) {
-            val timer = object : CountDownTimer(duration, 1000) {
-                override fun onTick(millisUntilFinished: Long) {
-                    // do nothing
-                }
-
-                override fun onFinish() {
-                    toast.cancel()
-                }
-            }
-            timer.start()
         }
 
         // all color toast CTA
@@ -426,7 +414,7 @@ class MotionToast {
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_SUCCESS else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -465,7 +453,7 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_ERROR else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -505,7 +493,7 @@ class MotionToast {
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_WARNING else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -544,7 +532,7 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -584,7 +572,7 @@ class MotionToast {
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_DELETE else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -625,7 +613,7 @@ class MotionToast {
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -688,7 +676,7 @@ class MotionToast {
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_SUCCESS else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -732,7 +720,7 @@ class MotionToast {
                     )
                     layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_ERROR else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -777,7 +765,7 @@ class MotionToast {
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_WARNING else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -821,7 +809,7 @@ class MotionToast {
                     )
                     layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -866,7 +854,7 @@ class MotionToast {
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_DELETE else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -914,7 +902,7 @@ class MotionToast {
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -984,7 +972,7 @@ class MotionToast {
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_SUCCESS else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -1027,7 +1015,7 @@ class MotionToast {
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_ERROR else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -1066,7 +1054,7 @@ class MotionToast {
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_WARNING else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -1105,7 +1093,7 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -1144,7 +1132,7 @@ class MotionToast {
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_DELETE else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -1183,7 +1171,7 @@ class MotionToast {
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout)
+                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
@@ -1192,6 +1180,19 @@ class MotionToast {
                     toast.show()
                 }
             }
+        }
+
+        private fun startTimer(duration: Long, toast: Toast) {
+            val timer = object : CountDownTimer(duration, 1000) {
+                override fun onTick(millisUntilFinished: Long) {
+                    // do nothing
+                }
+
+                override fun onFinish() {
+                    toast.cancel()
+                }
+            }
+            timer.start()
         }
 
         private fun startPulseAnimation(context: Activity, layout: View) {
@@ -1203,12 +1204,12 @@ class MotionToast {
             font: Typeface?,
             textColor: Int,
             message: String,
-            layout: View
+            layout: TextView
         ) {
-            layout.custom_toast_description.setTextColor(textColor)
-            layout.custom_toast_description.text = message
+            layout.setTextColor(textColor)
+            layout.text = message
             font?.let {
-                layout.custom_toast_description.typeface = font
+                layout.typeface = font
             }
         }
 
