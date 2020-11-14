@@ -132,8 +132,7 @@ class MotionToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
 
                     // Background tint color for side view
                     layout.colorView.backgroundTintList =
@@ -154,13 +153,8 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_SUCCESS else title
-                    layout.custom_toast_description.setTextColor(Color.BLACK)
-                    layout.custom_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.BLACK, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -185,8 +179,7 @@ class MotionToast {
                         DrawableCompat.wrap(layout.custom_toast_image.drawable),
                         ContextCompat.getColor(context, errorToastColor)
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, errorToastColor)
 
@@ -205,22 +198,11 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_ERROR else title
-                    layout.custom_toast_description.setTextColor(Color.BLACK)
-                    layout.custom_toast_description.text = message
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
-                    val toast = Toast(context.applicationContext)
-                    val timer = object : CountDownTimer(duration, 1000) {
-                        override fun onTick(millisUntilFinished: Long) {
-                            // do nothing
-                        }
 
-                        override fun onFinish() {
-                            toast.cancel()
-                        }
-                    }
-                    timer.start()
+                    setDescriptionDetails(font, Color.BLACK, message, layout)
+
+                    val toast = Toast(context.applicationContext)
+                    startTimer(duration, toast)
 
                     setGravity(position, toast)
                     toast.view = layout//setting the view of custom toast layout
@@ -238,8 +220,7 @@ class MotionToast {
                         DrawableCompat.wrap(layout.custom_toast_image.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, warningToastColor)
 
@@ -256,11 +237,9 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_WARNING else title
-                    layout.custom_toast_description.setTextColor(Color.BLACK)
-                    layout.custom_toast_description.text = message
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+
+                    setDescriptionDetails(font, Color.BLACK, message, layout)
+
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
@@ -280,8 +259,7 @@ class MotionToast {
                         DrawableCompat.wrap(layout.custom_toast_image.drawable),
                         ContextCompat.getColor(context, infoToastColor)
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
 
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, infoToastColor)
@@ -298,11 +276,9 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
-                    layout.custom_toast_description.setTextColor(Color.BLACK)
-                    layout.custom_toast_description.text = message
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+
+                    setDescriptionDetails(font, Color.BLACK, message, layout)
+
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
@@ -322,8 +298,7 @@ class MotionToast {
                         DrawableCompat.wrap(layout.custom_toast_image.drawable),
                         ContextCompat.getColor(context, deleteToastColor)
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, deleteToastColor)
 
@@ -340,11 +315,9 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_DELETE else title
-                    layout.custom_toast_description.setTextColor(Color.BLACK)
-                    layout.custom_toast_description.text = message
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+
+                    setDescriptionDetails(font, Color.BLACK, message, layout)
+
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
@@ -366,8 +339,7 @@ class MotionToast {
                         DrawableCompat.wrap(layout.custom_toast_image.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, warningToastColor)
 
@@ -384,11 +356,9 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
-                    layout.custom_toast_description.setTextColor(Color.BLACK)
-                    layout.custom_toast_description.text = message
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+
+                    setDescriptionDetails(font, Color.BLACK, message, layout)
+
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
@@ -455,13 +425,8 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_SUCCESS else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -499,13 +464,8 @@ class MotionToast {
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_ERROR else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -544,13 +504,8 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_WARNING else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -588,13 +543,8 @@ class MotionToast {
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -633,13 +583,8 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_DELETE else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -679,13 +624,8 @@ class MotionToast {
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -747,13 +687,8 @@ class MotionToast {
                     )
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_SUCCESS else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -796,13 +731,8 @@ class MotionToast {
                         )
                     )
                     layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_ERROR else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -846,13 +776,8 @@ class MotionToast {
                     )
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_WARNING else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -895,13 +820,8 @@ class MotionToast {
                         )
                     )
                     layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -945,13 +865,8 @@ class MotionToast {
                     )
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_DELETE else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -998,13 +913,8 @@ class MotionToast {
                     )
                     layout.color_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
-                    layout.color_toast_description.setTextColor(Color.WHITE)
-                    layout.color_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.color_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -1052,8 +962,7 @@ class MotionToast {
                         ContextCompat.getColor(context, successToastColor)
                     )
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
 
                     // Background tint color for side view
                     layout.colorView.backgroundTintList =
@@ -1074,13 +983,8 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_SUCCESS else title
-                    layout.custom_toast_description.setTextColor(Color.WHITE)
-                    layout.custom_toast_description.text = message
 
-                    // Setting typeface for the text
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -1105,8 +1009,7 @@ class MotionToast {
                         DrawableCompat.wrap(layout.custom_toast_image.drawable),
                         ContextCompat.getColor(context, errorToastColor)
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, errorToastColor)
 
@@ -1123,11 +1026,9 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_ERROR else title
-                    layout.custom_toast_description.setTextColor(Color.WHITE)
-                    layout.custom_toast_description.text = message
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
+
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
@@ -1147,8 +1048,7 @@ class MotionToast {
                         DrawableCompat.wrap(layout.custom_toast_image.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, warningToastColor)
 
@@ -1165,11 +1065,9 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_WARNING else title
-                    layout.custom_toast_description.setTextColor(Color.WHITE)
-                    layout.custom_toast_description.text = message
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
+
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
@@ -1189,8 +1087,7 @@ class MotionToast {
                         DrawableCompat.wrap(layout.custom_toast_image.drawable),
                         ContextCompat.getColor(context, infoToastColor)
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
 
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, infoToastColor)
@@ -1207,11 +1104,9 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
-                    layout.custom_toast_description.setTextColor(Color.WHITE)
-                    layout.custom_toast_description.text = message
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
+
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
@@ -1231,8 +1126,7 @@ class MotionToast {
                         DrawableCompat.wrap(layout.custom_toast_image.drawable),
                         ContextCompat.getColor(context, deleteToastColor)
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, deleteToastColor)
 
@@ -1249,19 +1143,15 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_DELETE else title
-                    layout.custom_toast_description.setTextColor(Color.WHITE)
-                    layout.custom_toast_description.text = message
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
+
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
                     setGravity(position, toast)
                     toast.view = layout//setting the view of custom toast layout
-//                    layout.animate().alpha(0f).duration = 3000
                     toast.show()
-
                 }
                 // CTA for Toast No Internet
                 TOAST_NO_INTERNET -> {
@@ -1275,8 +1165,7 @@ class MotionToast {
                         DrawableCompat.wrap(layout.custom_toast_image.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.custom_toast_image.startAnimation(pulseAnimation)
+                    startPulseAnimation(context, layout)
                     layout.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, warningToastColor)
 
@@ -1293,11 +1182,8 @@ class MotionToast {
                     )
                     layout.custom_toast_text.text =
                         if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
-                    layout.custom_toast_description.setTextColor(Color.WHITE)
-                    layout.custom_toast_description.text = message
-                    font?.let {
-                        layout.custom_toast_description.typeface = font
-                    }
+
+                    setDescriptionDetails(font, Color.WHITE, message, layout)
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
@@ -1305,6 +1191,24 @@ class MotionToast {
                     toast.view = layout//setting the view of custom toast layout
                     toast.show()
                 }
+            }
+        }
+
+        private fun startPulseAnimation(context: Activity, layout: View) {
+            val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
+            layout.custom_toast_image.startAnimation(pulseAnimation)
+        }
+
+        private fun setDescriptionDetails(
+            font: Typeface?,
+            textColor: Int,
+            message: String,
+            layout: View
+        ) {
+            layout.custom_toast_description.setTextColor(textColor)
+            layout.custom_toast_description.text = message
+            font?.let {
+                layout.custom_toast_description.typeface = font
             }
         }
 
