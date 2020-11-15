@@ -74,7 +74,7 @@ Add dependency in your app module
 
 ```
 	dependencies {
-	        implementation 'com.github.Spikeysanju:MotionToast:1.3.3.3' 
+	        implementation 'com.github.Spikeysanju:MotionToast:1.3.3.4' 
 	}
 
 ```
