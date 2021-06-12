@@ -113,7 +113,7 @@ Add dependency in your app module
 ### Error Toast
 ```
  MotionToast.createToast(this,
- 		    "Failed ☹️"
+ 		    "Failed ☹️",
  		    "Profile Update Failed!",
                     MotionToast.TOAST_ERROR,
                     MotionToast.GRAVITY_BOTTOM,
