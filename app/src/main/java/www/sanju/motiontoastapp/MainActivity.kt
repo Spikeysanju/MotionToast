@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClickListener,
     CompoundButton.OnCheckedChangeListener {
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     this,
                     "Profile saved",
                     "Lorem Ipsum is simply dummy this is very simple text Lorem Ipsum is simply dummy this is very simple text Lorem Ipsum is simply dummy this is very simple text",
-                    MotionToast.TOAST_SUCCESS,
+                    MotionToastStyle.SUCCESS,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.montserrat_regular)
@@ -66,7 +67,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     this,
                     "Profile failed",
                     "Profile Update Failed due to this reason",
-                    MotionToast.TOAST_ERROR,
+                    MotionToastStyle.ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
@@ -78,7 +79,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     this,
                     "",
                     "Please Fill All The Details!",
-                    MotionToast.TOAST_WARNING,
+                    MotionToastStyle.WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
@@ -89,7 +90,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     this,
                     "",
                     "Color Toast testing here!",
-                    MotionToast.TOAST_INFO,
+                    MotionToastStyle.INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
@@ -99,7 +100,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 MotionToast.createToast(
                     this, "Profile Deleted!",
                     "",
-                    MotionToast.TOAST_DELETE,
+                    MotionToastStyle.DELETE,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
@@ -109,7 +110,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 MotionToast.createToast(
                     this, "Please turn on internet connection!",
                     "",
-                    MotionToast.TOAST_NO_INTERNET,
+                    MotionToastStyle.NO_INTERNET,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
@@ -126,7 +127,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     this,
                     "Post create 😍",
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                    MotionToast.TOAST_SUCCESS,
+                    MotionToastStyle.SUCCESS,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.montserrat_regular)
@@ -137,7 +138,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     this,
                     "",
                     "Profile Update Failed!",
-                    MotionToast.TOAST_ERROR,
+                    MotionToastStyle.ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
@@ -149,7 +150,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     this,
                     "",
                     "Please Fill All The Details!",
-                    MotionToast.TOAST_WARNING,
+                    MotionToastStyle.WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
@@ -161,7 +162,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     this,
                     "",
                     "Dark ui testing here!",
-                    MotionToast.TOAST_INFO,
+                    MotionToastStyle.INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
@@ -172,7 +173,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     this,
                     "",
                     "Profile Deleted!",
-                    MotionToast.TOAST_DELETE,
+                    MotionToastStyle.DELETE,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
@@ -183,7 +184,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                     this,
                     "",
                     "Please turn on internet connection!",
-                    MotionToast.TOAST_NO_INTERNET,
+                    MotionToastStyle.NO_INTERNET,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)

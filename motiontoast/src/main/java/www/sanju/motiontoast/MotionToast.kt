@@ -25,12 +25,6 @@ class MotionToast {
 
         const val LONG_DURATION = 5000L // 5 seconds
         const val SHORT_DURATION = 2000L // 2 seconds
-        const val TOAST_SUCCESS = "SUCCESS"
-        const val TOAST_ERROR = "FAILED"
-        const val TOAST_WARNING = "WARNING"
-        const val TOAST_INFO = "INFO"
-        const val TOAST_DELETE = "DELETE"
-        const val TOAST_NO_INTERNET = "NO INTERNET"
         const val GRAVITY_TOP = 50
         const val GRAVITY_CENTER = 20
         const val GRAVITY_BOTTOM = 80
@@ -108,7 +102,7 @@ class MotionToast {
             context: Activity,
             title: String? = null,
             message: String,
-            style: String,
+            style: MotionToastStyle,
             position: Int,
             duration: Long,
             font: Typeface?
@@ -120,7 +114,7 @@ class MotionToast {
             )
             when (style) {
                 // Function for Toast Success
-                TOAST_SUCCESS -> {
+                MotionToastStyle.SUCCESS -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -153,9 +147,14 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_SUCCESS else title
+                        if (title.isNullOrBlank()) MotionToastStyle.SUCCESS.getName() else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.BLACK,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -169,7 +168,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Error
-                TOAST_ERROR -> {
+                MotionToastStyle.ERROR -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -198,9 +197,14 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_ERROR else title
+                        if (title.isNullOrBlank()) MotionToastStyle.ERROR.getName() else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.BLACK,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -210,7 +214,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Warning
-                TOAST_WARNING -> {
+                MotionToastStyle.WARNING -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -237,9 +241,14 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_WARNING else title
+                        if (title.isNullOrBlank()) MotionToastStyle.WARNING.getName() else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.BLACK,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -249,7 +258,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Info
-                TOAST_INFO -> {
+                MotionToastStyle.INFO -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -276,9 +285,15 @@ class MotionToast {
                             infoToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
+                    layout.custom_toast_text.text =
+                        if (title.isNullOrBlank()) MotionToastStyle.INFO.getName() else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.BLACK,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -288,7 +303,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Delete
-                TOAST_DELETE -> {
+                MotionToastStyle.DELETE -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -315,9 +330,14 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_DELETE else title
+                        if (title.isNullOrBlank()) MotionToastStyle.DELETE.getName() else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.BLACK,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -329,7 +349,7 @@ class MotionToast {
 
                 }
                 // CTA for Toast No Internet
-                TOAST_NO_INTERNET -> {
+                MotionToastStyle.NO_INTERNET -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -356,9 +376,14 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
+                        if (title.isNullOrBlank()) MotionToastStyle.NO_INTERNET.getName() else title
 
-                    setDescriptionDetails(font, Color.BLACK, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.BLACK,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -375,7 +400,7 @@ class MotionToast {
             context: Activity,
             title: String? = null,
             message: String,
-            style: String,
+            style: MotionToastStyle,
             position: Int,
             duration: Long,
             font: Typeface?
@@ -387,7 +412,7 @@ class MotionToast {
             )
             when (style) {
                 // Function for Toast Success
-                TOAST_SUCCESS -> {
+                MotionToastStyle.SUCCESS -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -412,9 +437,14 @@ class MotionToast {
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_SUCCESS else title
+                        if (title.isNullOrBlank()) MotionToastStyle.SUCCESS.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -428,7 +458,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Error
-                TOAST_ERROR -> {
+                MotionToastStyle.ERROR -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -451,9 +481,15 @@ class MotionToast {
 
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_ERROR else title
+                    layout.color_toast_text.text =
+                        if (title.isNullOrBlank()) MotionToastStyle.ERROR.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -467,7 +503,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Warning
-                TOAST_WARNING -> {
+                MotionToastStyle.WARNING -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -491,9 +527,14 @@ class MotionToast {
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_WARNING else title
+                        if (title.isNullOrBlank()) MotionToastStyle.WARNING.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -507,7 +548,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Info
-                TOAST_INFO -> {
+                MotionToastStyle.INFO -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -530,9 +571,15 @@ class MotionToast {
 
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
+                    layout.color_toast_text.text =
+                        if (title.isNullOrBlank()) MotionToastStyle.INFO.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -546,7 +593,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Delete
-                TOAST_DELETE -> {
+                MotionToastStyle.DELETE -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -570,9 +617,14 @@ class MotionToast {
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_DELETE else title
+                        if (title.isNullOrBlank()) MotionToastStyle.DELETE.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -587,7 +639,7 @@ class MotionToast {
 
                 }
                 // CTA for Toast No Internet
-                TOAST_NO_INTERNET -> {
+                MotionToastStyle.NO_INTERNET -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -611,9 +663,14 @@ class MotionToast {
                     // Setting up the color for title & Message text
                     layout.color_toast_text.setTextColor(Color.WHITE)
                     layout.color_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
+                        if (title.isNullOrBlank()) MotionToastStyle.NO_INTERNET.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -634,7 +691,7 @@ class MotionToast {
             context: Activity,
             title: String? = null,
             message: String,
-            style: String,
+            style: MotionToastStyle,
             position: Int,
             duration: Long,
             font: Typeface?
@@ -646,7 +703,7 @@ class MotionToast {
             )
             when (style) {
                 // Function for Toast Success
-                TOAST_SUCCESS -> {
+                MotionToastStyle.SUCCESS -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -674,9 +731,14 @@ class MotionToast {
                         )
                     )
                     layout.color_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_SUCCESS else title
+                        if (title.isNullOrBlank()) MotionToastStyle.SUCCESS.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -690,7 +752,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Error
-                TOAST_ERROR -> {
+                MotionToastStyle.ERROR -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -718,9 +780,15 @@ class MotionToast {
                             errorToastColor
                         )
                     )
-                    layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_ERROR else title
+                    layout.color_toast_text.text =
+                        if (title.isNullOrBlank()) MotionToastStyle.ERROR.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -734,7 +802,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Warning
-                TOAST_WARNING -> {
+                MotionToastStyle.WARNING -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -763,9 +831,14 @@ class MotionToast {
                         )
                     )
                     layout.color_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_WARNING else title
+                        if (title.isNullOrBlank()) MotionToastStyle.WARNING.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -779,7 +852,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Info
-                TOAST_INFO -> {
+                MotionToastStyle.INFO -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -807,9 +880,15 @@ class MotionToast {
                             infoToastColor
                         )
                     )
-                    layout.color_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
+                    layout.color_toast_text.text =
+                        if (title.isNullOrBlank()) MotionToastStyle.INFO.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -823,7 +902,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Delete
-                TOAST_DELETE -> {
+                MotionToastStyle.DELETE -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -852,9 +931,14 @@ class MotionToast {
                         )
                     )
                     layout.color_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_DELETE else title
+                        if (title.isNullOrBlank()) MotionToastStyle.DELETE.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -871,7 +955,7 @@ class MotionToast {
 
                 }
                 // CTA for Toast No Internet
-                TOAST_NO_INTERNET -> {
+                MotionToastStyle.NO_INTERNET -> {
                     layout.color_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -900,9 +984,14 @@ class MotionToast {
                         )
                     )
                     layout.color_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
+                        if (title.isNullOrBlank()) MotionToastStyle.NO_INTERNET.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.color_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.color_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -926,7 +1015,7 @@ class MotionToast {
             context: Activity,
             title: String? = null,
             message: String,
-            style: String,
+            style: MotionToastStyle,
             position: Int,
             duration: Long,
             font: Typeface?
@@ -938,7 +1027,7 @@ class MotionToast {
             )
             when (style) {
                 // Function for Toast Success
-                TOAST_SUCCESS -> {
+                MotionToastStyle.SUCCESS -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -970,9 +1059,14 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_SUCCESS else title
+                        if (title.isNullOrBlank()) MotionToastStyle.SUCCESS.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     // init toast
                     val toast = Toast(context.applicationContext)
@@ -986,7 +1080,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Error
-                TOAST_ERROR -> {
+                MotionToastStyle.ERROR -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -1013,9 +1107,14 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_ERROR else title
+                        if (title.isNullOrBlank()) MotionToastStyle.ERROR.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -1025,7 +1124,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Warning
-                TOAST_WARNING -> {
+                MotionToastStyle.WARNING -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -1052,9 +1151,14 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_WARNING else title
+                        if (title.isNullOrBlank()) MotionToastStyle.WARNING.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -1064,7 +1168,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Info
-                TOAST_INFO -> {
+                MotionToastStyle.INFO -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -1091,9 +1195,15 @@ class MotionToast {
                             infoToastColor
                         )
                     )
-                    layout.custom_toast_text.text = if (title.isNullOrBlank()) TOAST_INFO else title
+                    layout.custom_toast_text.text =
+                        if (title.isNullOrBlank()) MotionToastStyle.INFO.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -1103,7 +1213,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast Delete
-                TOAST_DELETE -> {
+                MotionToastStyle.DELETE -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -1130,9 +1240,14 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_DELETE else title
+                        if (title.isNullOrBlank()) MotionToastStyle.DELETE.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.custom_toast_description
+                    )
 
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -1142,7 +1257,7 @@ class MotionToast {
                     toast.show()
                 }
                 // CTA for Toast No Internet
-                TOAST_NO_INTERNET -> {
+                MotionToastStyle.NO_INTERNET -> {
                     layout.custom_toast_image.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
@@ -1169,9 +1284,14 @@ class MotionToast {
                         )
                     )
                     layout.custom_toast_text.text =
-                        if (title.isNullOrBlank()) TOAST_NO_INTERNET else title
+                        if (title.isNullOrBlank()) MotionToastStyle.NO_INTERNET.getName() else title
 
-                    setDescriptionDetails(font, Color.WHITE, message, layout.custom_toast_description)
+                    setDescriptionDetails(
+                        font,
+                        Color.WHITE,
+                        message,
+                        layout.custom_toast_description
+                    )
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
 
