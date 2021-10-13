@@ -103,7 +103,7 @@ Add dependency in your app module
  MotionToast.createToast(this,
  		"Hurray success 😍"
  		"Upload Completed successfully!",
-                MotionToast.TOAST_SUCCESS,
+                MotionToastStyle.SUCCESS,
                 MotionToast.GRAVITY_BOTTOM,
                 MotionToast.LONG_DURATION,
                 ResourcesCompat.getFont(this,R.font.helvetica_regular))
@@ -115,7 +115,7 @@ Add dependency in your app module
  MotionToast.createToast(this,
  		    "Failed ☹️"
  		    "Profile Update Failed!",
-                    MotionToast.TOAST_ERROR,
+                    MotionToastStyle.ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -123,7 +123,7 @@ Add dependency in your app module
 ### Warning Toast
 ```
 MotionToast.createToast(this,"Please fill all the details!",
-                    MotionToast.TOAST_WARNING,
+                    MotionToastStyle.WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -134,7 +134,7 @@ MotionToast.createToast(this,"Please fill all the details!",
 ### Info Toast
 ```
        MotionToast.createToast(this,"This is information toast!",
-                    MotionToast.TOAST_INFO,
+                    MotionToastStyle.INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -143,7 +143,7 @@ MotionToast.createToast(this,"Please fill all the details!",
 ### Delete Toast
 ```
        MotionToast.createToast(this,"Delete all history!",
-                    MotionToast.TOAST_DELETE,
+                    MotionToastStyle.DELETE,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -155,7 +155,7 @@ MotionToast.createToast(this,"Please fill all the details!",
 ### Success Toast
 ```
  MotionToast.createColorToast(this,"Upload Completed!",
-                MotionToast.TOAST_SUCCESS,
+                MotionToastStyle.SUCCESS,
                 MotionToast.GRAVITY_BOTTOM,
                 MotionToast.LONG_DURATION,
                 ResourcesCompat.getFont(this,R.font.helvetica_regular))
@@ -165,7 +165,7 @@ MotionToast.createToast(this,"Please fill all the details!",
 ### Error Toast
 ```
  MotionToast.createColorToast(this,"Profile Update Failed!",
-                    MotionToast.TOAST_ERROR,
+                    MotionToastStyle.ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -173,7 +173,7 @@ MotionToast.createToast(this,"Please fill all the details!",
 ### Warning Toast
 ```
 MotionToast.createColorToast(this,"Please fill all the details!",
-                    MotionToast.TOAST_WARNING,
+                    MotionToastStyle.WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -184,7 +184,7 @@ MotionToast.createColorToast(this,"Please fill all the details!",
 ### Info Toast
 ```
        MotionToast.createColorToast(this,"This is information toast!",
-                    MotionToast.TOAST_INFO,
+                    MotionToastStyle.INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -193,7 +193,7 @@ MotionToast.createColorToast(this,"Please fill all the details!",
 ### Delete Toast
 ```
        MotionToast.createColorToast(this,"Delete all history!",
-                    MotionToast.TOAST_DELETE,
+                    MotionToastStyle.DELETE,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -205,7 +205,7 @@ MotionToast.createColorToast(this,"Please fill all the details!",
 ### Success Toast
 ```
  MotionToast.darkToast(this,"Upload Completed!",
-                MotionToast.TOAST_SUCCESS,
+                MotionToastStyle.SUCCESS,
                 MotionToast.GRAVITY_BOTTOM,
                 MotionToast.LONG_DURATION,
                 ResourcesCompat.getFont(this,R.font.helvetica_regular))
@@ -215,7 +215,7 @@ MotionToast.createColorToast(this,"Please fill all the details!",
 ### Error Toast
 ```
  MotionToast.darkToast(this,"Profile Update Failed!",
-                    MotionToast.TOAST_ERROR,
+                    MotionToastStyle.ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -223,7 +223,7 @@ MotionToast.createColorToast(this,"Please fill all the details!",
 ### Warning Toast
 ```
 MotionToast.darkToast(this,"Please fill all the details!",
-                    MotionToast.TOAST_WARNING,
+                    MotionToastStyle.WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -234,7 +234,7 @@ MotionToast.darkToast(this,"Please fill all the details!",
 ### Info Toast
 ```
        MotionToast.darkToast(this,"This is information toast!",
-                    MotionToast.TOAST_INFO,
+                    MotionToastStyle.INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -243,7 +243,7 @@ MotionToast.darkToast(this,"Please fill all the details!",
 ### Delete Toast
 ```
        MotionToast.darkToast(this,"Delete all history!",
-                    MotionToast.TOAST_DELETE,
+                    MotionToastStyle.DELETE,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -255,7 +255,7 @@ MotionToast.darkToast(this,"Please fill all the details!",
 ### Success Toast
 ```
  MotionToast.darkColorToast(this,"Upload Completed!",
-                MotionToast.TOAST_SUCCESS,
+                MotionToastStyle.SUCCESS,
                 MotionToast.GRAVITY_BOTTOM,
                 MotionToast.LONG_DURATION,
                 ResourcesCompat.getFont(this,R.font.helvetica_regular))
@@ -265,7 +265,7 @@ MotionToast.darkToast(this,"Please fill all the details!",
 ### Error Toast
 ```
  MotionToast.darkColorToast(this,"Profile Update Failed!",
-                    MotionToast.TOAST_ERROR,
+                    MotionToastStyle.ERROR,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -273,7 +273,7 @@ MotionToast.darkToast(this,"Please fill all the details!",
 ### Warning Toast
 ```
 MotionToast.darkColorToast(this,"Please fill all the details!",
-                    MotionToast.TOAST_WARNING,
+                    MotionToastStyle.WARNING,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -284,7 +284,7 @@ MotionToast.darkColorToast(this,"Please fill all the details!",
 ### Info Toast
 ```
        MotionToast.darkColorToast(this,"This is information toast!",
-                    MotionToast.TOAST_INFO,
+                    MotionToastStyle.INFO,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
@@ -293,7 +293,7 @@ MotionToast.darkColorToast(this,"Please fill all the details!",
 ### Delete Toast
 ```
        MotionToast.darkColorToast(this,"Delete all history!",
-                    MotionToast.TOAST_DELETE,
+                    MotionToastStyle.DELETE,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,
                     ResourcesCompat.getFont(this,R.font.helvetica_regular))  
