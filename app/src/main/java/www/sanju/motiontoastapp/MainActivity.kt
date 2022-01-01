@@ -5,31 +5,35 @@ import android.view.View
 import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
-import kotlinx.android.synthetic.main.activity_main.*
 import www.sanju.motiontoast.MotionToast
 import www.sanju.motiontoast.MotionToastStyle
+import www.sanju.motiontoastapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClickListener,
     CompoundButton.OnCheckedChangeListener {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        switch_custom_colors?.setOnCheckedChangeListener(this)
-        successBtn.setOnClickListener(this)
-        errorBtn.setOnClickListener(this)
-        warningBtn.setOnClickListener(this)
-        infoBtn.setOnClickListener(this)
-        deleteBtn.setOnClickListener(this)
-        noInternetBtn.setOnClickListener(this)
+        binding.switchCustomColors.setOnCheckedChangeListener(this)
+        binding.successBtn.setOnClickListener(this)
+        binding.errorBtn.setOnClickListener(this)
+        binding.warningBtn.setOnClickListener(this)
+        binding.infoBtn.setOnClickListener(this)
+        binding.deleteBtn.setOnClickListener(this)
+        binding.noInternetBtn.setOnClickListener(this)
 
-        successBtn.setOnLongClickListener(this)
-        errorBtn.setOnLongClickListener(this)
-        warningBtn.setOnLongClickListener(this)
-        infoBtn.setOnLongClickListener(this)
-        deleteBtn.setOnLongClickListener(this)
-        noInternetBtn.setOnLongClickListener(this)
+        binding.successBtn.setOnLongClickListener(this)
+        binding.errorBtn.setOnLongClickListener(this)
+        binding.warningBtn.setOnLongClickListener(this)
+        binding.infoBtn.setOnLongClickListener(this)
+        binding.deleteBtn.setOnLongClickListener(this)
+        binding.noInternetBtn.setOnLongClickListener(this)
     }
 
     private fun setToastColors(newColorsEnabled: Boolean) {
