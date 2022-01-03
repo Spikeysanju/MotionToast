@@ -10,16 +10,16 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
-import kotlinx.android.synthetic.main.full_color_toast.view.*
-import kotlinx.android.synthetic.main.motion_toast.view.*
+import www.sanju.motiontoast.databinding.FullColorToastBinding
+import www.sanju.motiontoast.databinding.MotionToastBinding
 
-@Suppress("DEPRECATION")
 class MotionToast {
     companion object {
 
@@ -108,29 +108,27 @@ class MotionToast {
             font: Typeface?
         ) {
             layoutInflater = LayoutInflater.from(context)
-            val layout = layoutInflater.inflate(
-                R.layout.motion_toast,
-                (context).findViewById(R.id.motion_toast_view)
-            )
+            val binding = MotionToastBinding.inflate(layoutInflater)
+            val layout = binding.root
             when (style) {
                 // Function for Toast Success
                 MotionToastStyle.SUCCESS -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_check_green
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, successToastColor)
                     )
 
                     // Pulse Animation for Icon
-                    startPulseAnimation(context, layout)
+                    startPulseAnimation(context, binding.customToastImage)
 
                     // Background tint color for side view
-                    layout.colorView.backgroundTintList =
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, successToastColor)
 
                     // round background color
@@ -140,20 +138,20 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             successToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.SUCCESS.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.BLACK,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     // init toast
@@ -169,18 +167,18 @@ class MotionToast {
                 }
                 // CTA for Toast Error
                 MotionToastStyle.ERROR -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_error_
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, errorToastColor)
                     )
-                    startPulseAnimation(context, layout)
-                    layout.colorView.backgroundTintList =
+                    startPulseAnimation(context, binding.customToastImage)
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, errorToastColor)
 
                     val drawable =
@@ -190,20 +188,20 @@ class MotionToast {
                         PorterDuff.Mode.MULTIPLY
                     )
                     layout.background = drawable
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             errorToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.ERROR.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.BLACK,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     val toast = Toast(context.applicationContext)
@@ -215,18 +213,18 @@ class MotionToast {
                 }
                 // CTA for Toast Warning
                 MotionToastStyle.WARNING -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_warning_yellow
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
-                    startPulseAnimation(context, layout)
-                    layout.colorView.backgroundTintList =
+                    startPulseAnimation(context, binding.customToastImage)
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, warningToastColor)
 
                     setBackgroundAndFilter(
@@ -234,20 +232,20 @@ class MotionToast {
                         warningBackgroundToastColor, layout, context
                     )
 
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             warningToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.WARNING.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.BLACK,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     val toast = Toast(context.applicationContext)
@@ -259,19 +257,19 @@ class MotionToast {
                 }
                 // CTA for Toast Info
                 MotionToastStyle.INFO -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_info_blue
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, infoToastColor)
                     )
-                    startPulseAnimation(context, layout)
+                    startPulseAnimation(context, binding.customToastImage)
 
-                    layout.colorView.backgroundTintList =
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, infoToastColor)
 
                     setBackgroundAndFilter(
@@ -279,20 +277,20 @@ class MotionToast {
                         infoBackgroundToastColor, layout, context
                     )
 
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             infoToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.INFO.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.BLACK,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     val toast = Toast(context.applicationContext)
@@ -304,18 +302,18 @@ class MotionToast {
                 }
                 // CTA for Toast Delete
                 MotionToastStyle.DELETE -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_delete_
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, deleteToastColor)
                     )
-                    startPulseAnimation(context, layout)
-                    layout.colorView.backgroundTintList =
+                    startPulseAnimation(context, binding.customToastImage)
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, deleteToastColor)
 
                     setBackgroundAndFilter(
@@ -323,20 +321,20 @@ class MotionToast {
                         deleteBackgroundToastColor, layout, context
                     )
 
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             deleteToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.DELETE.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.BLACK,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     val toast = Toast(context.applicationContext)
@@ -344,24 +342,24 @@ class MotionToast {
 
                     setGravity(position, toast)
                     toast.view = layout//setting the view of custom toast layout
-//                    layout.animate().alpha(0f).duration = 3000
+//                    binding.animate().alpha(0f).duration = 3000
                     toast.show()
 
                 }
                 // CTA for Toast No Internet
                 MotionToastStyle.NO_INTERNET -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_no_internet
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
-                    startPulseAnimation(context, layout)
-                    layout.colorView.backgroundTintList =
+                    startPulseAnimation(context, binding.customToastImage)
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, warningToastColor)
 
                     setBackgroundAndFilter(
@@ -369,20 +367,20 @@ class MotionToast {
                         warningBackgroundToastColor, layout, context
                     )
 
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             warningToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.NO_INTERNET.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.BLACK,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     val toast = Toast(context.applicationContext)
@@ -406,27 +404,25 @@ class MotionToast {
             font: Typeface?
         ) {
             layoutInflater = LayoutInflater.from(context)
-            val layout = layoutInflater.inflate(
-                R.layout.full_color_toast,
-                (context).findViewById(R.id.color_toast_view)
-            )
+            val binding = FullColorToastBinding.inflate(layoutInflater)
+            val layout = binding.root
             when (style) {
                 // Function for Toast Success
                 MotionToastStyle.SUCCESS -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_check_green
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, successToastColor)
                     )
 
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -435,15 +431,15 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text =
+                    binding.colorToastText.setTextColor(Color.WHITE)
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.SUCCESS.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -459,19 +455,19 @@ class MotionToast {
                 }
                 // CTA for Toast Error
                 MotionToastStyle.ERROR -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_error_
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, errorToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -480,15 +476,15 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text =
+                    binding.colorToastText.setTextColor(Color.WHITE)
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.ERROR.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -504,19 +500,19 @@ class MotionToast {
                 }
                 // CTA for Toast Warning
                 MotionToastStyle.WARNING -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_warning_yellow
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -525,15 +521,15 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text =
+                    binding.colorToastText.setTextColor(Color.WHITE)
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.WARNING.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -549,19 +545,19 @@ class MotionToast {
                 }
                 // CTA for Toast Info
                 MotionToastStyle.INFO -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_info_blue
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, infoToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -570,15 +566,15 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text =
+                    binding.colorToastText.setTextColor(Color.WHITE)
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.INFO.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -594,19 +590,19 @@ class MotionToast {
                 }
                 // CTA for Toast Delete
                 MotionToastStyle.DELETE -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_delete_
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, deleteToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -615,15 +611,15 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text =
+                    binding.colorToastText.setTextColor(Color.WHITE)
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.DELETE.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -640,19 +636,19 @@ class MotionToast {
                 }
                 // CTA for Toast No Internet
                 MotionToastStyle.NO_INTERNET -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_no_internet
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -661,15 +657,15 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(Color.WHITE)
-                    layout.color_toast_text.text =
+                    binding.colorToastText.setTextColor(Color.WHITE)
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.NO_INTERNET.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -697,26 +693,24 @@ class MotionToast {
             font: Typeface?
         ) {
             layoutInflater = LayoutInflater.from(context)
-            val layout = layoutInflater.inflate(
-                R.layout.full_color_toast,
-                (context).findViewById(R.id.color_toast_view)
-            )
+            val binding = FullColorToastBinding.inflate(layoutInflater)
+            val layout = binding.root
             when (style) {
                 // Function for Toast Success
                 MotionToastStyle.SUCCESS -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_check_green
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, successToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -724,20 +718,20 @@ class MotionToast {
                         R.color.dark_bg_color, layout, context
                     )
 
-                    layout.color_toast_text.setTextColor(
+                    binding.colorToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             successToastColor
                         )
                     )
-                    layout.color_toast_text.text =
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.SUCCESS.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -753,19 +747,19 @@ class MotionToast {
                 }
                 // CTA for Toast Error
                 MotionToastStyle.ERROR -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_error_
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, errorToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -774,20 +768,20 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(
+                    binding.colorToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             errorToastColor
                         )
                     )
-                    layout.color_toast_text.text =
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.ERROR.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -803,19 +797,19 @@ class MotionToast {
                 }
                 // CTA for Toast Warning
                 MotionToastStyle.WARNING -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_warning_yellow
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -824,20 +818,20 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(
+                    binding.colorToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             warningToastColor
                         )
                     )
-                    layout.color_toast_text.text =
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.WARNING.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -853,19 +847,19 @@ class MotionToast {
                 }
                 // CTA for Toast Info
                 MotionToastStyle.INFO -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_info_blue
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, infoToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -874,20 +868,20 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(
+                    binding.colorToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             infoToastColor
                         )
                     )
-                    layout.color_toast_text.text =
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.INFO.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -903,19 +897,19 @@ class MotionToast {
                 }
                 // CTA for Toast Delete
                 MotionToastStyle.DELETE -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_delete_
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, deleteToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -924,20 +918,20 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(
+                    binding.colorToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             deleteToastColor
                         )
                     )
-                    layout.color_toast_text.text =
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.DELETE.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -956,19 +950,19 @@ class MotionToast {
                 }
                 // CTA for Toast No Internet
                 MotionToastStyle.NO_INTERNET -> {
-                    layout.color_toast_image.setImageDrawable(
+                    binding.colorToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_no_internet
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.color_toast_image.drawable),
+                        DrawableCompat.wrap(binding.colorToastImage.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
                     // Pulse Animation for Icon
                     val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-                    layout.color_toast_image.startAnimation(pulseAnimation)
+                    binding.colorToastImage.startAnimation(pulseAnimation)
 
                     // round background color
                     setBackgroundAndFilter(
@@ -977,20 +971,20 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.color_toast_text.setTextColor(
+                    binding.colorToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             warningToastColor
                         )
                     )
-                    layout.color_toast_text.text =
+                    binding.colorToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.NO_INTERNET.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.color_toast_description
+                        binding.colorToastDescription
                     )
 
                     // init toast
@@ -1021,28 +1015,26 @@ class MotionToast {
             font: Typeface?
         ) {
             layoutInflater = LayoutInflater.from(context)
-            val layout = layoutInflater.inflate(
-                R.layout.motion_toast,
-                (context).findViewById(R.id.motion_toast_view)
-            )
+            val binding = MotionToastBinding.inflate(layoutInflater)
+            val layout = binding.root
             when (style) {
                 // Function for Toast Success
                 MotionToastStyle.SUCCESS -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_check_green
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, successToastColor)
                     )
                     // Pulse Animation for Icon
-                    startPulseAnimation(context, layout)
+                    startPulseAnimation(context, binding.customToastImage)
 
                     // Background tint color for side view
-                    layout.colorView.backgroundTintList =
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, successToastColor)
 
                     // round background color
@@ -1052,20 +1044,20 @@ class MotionToast {
                     )
 
                     // Setting up the color for title & Message text
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             successToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.SUCCESS.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     // init toast
@@ -1081,18 +1073,18 @@ class MotionToast {
                 }
                 // CTA for Toast Error
                 MotionToastStyle.ERROR -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_error_
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, errorToastColor)
                     )
-                    startPulseAnimation(context, layout)
-                    layout.colorView.backgroundTintList =
+                    startPulseAnimation(context, binding.customToastImage)
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, errorToastColor)
 
                     setBackgroundAndFilter(
@@ -1100,20 +1092,20 @@ class MotionToast {
                         R.color.dark_bg_color, layout, context
                     )
 
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             errorToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.ERROR.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     val toast = Toast(context.applicationContext)
@@ -1125,18 +1117,18 @@ class MotionToast {
                 }
                 // CTA for Toast Warning
                 MotionToastStyle.WARNING -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_warning_yellow
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
-                    startPulseAnimation(context, layout)
-                    layout.colorView.backgroundTintList =
+                    startPulseAnimation(context, binding.customToastImage)
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, warningToastColor)
 
                     setBackgroundAndFilter(
@@ -1144,20 +1136,20 @@ class MotionToast {
                         R.color.dark_bg_color, layout, context
                     )
 
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             warningToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.WARNING.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     val toast = Toast(context.applicationContext)
@@ -1169,19 +1161,19 @@ class MotionToast {
                 }
                 // CTA for Toast Info
                 MotionToastStyle.INFO -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_info_blue
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, infoToastColor)
                     )
-                    startPulseAnimation(context, layout)
+                    startPulseAnimation(context, binding.customToastImage)
 
-                    layout.colorView.backgroundTintList =
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, infoToastColor)
 
                     setBackgroundAndFilter(
@@ -1189,20 +1181,20 @@ class MotionToast {
                         R.color.dark_bg_color, layout, context
                     )
 
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             infoToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.INFO.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     val toast = Toast(context.applicationContext)
@@ -1214,18 +1206,18 @@ class MotionToast {
                 }
                 // CTA for Toast Delete
                 MotionToastStyle.DELETE -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_delete_
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, deleteToastColor)
                     )
-                    startPulseAnimation(context, layout)
-                    layout.colorView.backgroundTintList =
+                    startPulseAnimation(context, binding.customToastImage)
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, deleteToastColor)
 
                     setBackgroundAndFilter(
@@ -1233,20 +1225,20 @@ class MotionToast {
                         R.color.dark_bg_color, layout, context
                     )
 
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             deleteToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.DELETE.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
 
                     val toast = Toast(context.applicationContext)
@@ -1258,18 +1250,18 @@ class MotionToast {
                 }
                 // CTA for Toast No Internet
                 MotionToastStyle.NO_INTERNET -> {
-                    layout.custom_toast_image.setImageDrawable(
+                    binding.customToastImage.setImageDrawable(
                         ContextCompat.getDrawable(
                             context,
                             R.drawable.ic_no_internet
                         )
                     )
                     DrawableCompat.setTint(
-                        DrawableCompat.wrap(layout.custom_toast_image.drawable),
+                        DrawableCompat.wrap(binding.customToastImage.drawable),
                         ContextCompat.getColor(context, warningToastColor)
                     )
-                    startPulseAnimation(context, layout)
-                    layout.colorView.backgroundTintList =
+                    startPulseAnimation(context, binding.customToastImage)
+                    binding.colorView.backgroundTintList =
                         ContextCompat.getColorStateList(context, warningToastColor)
 
                     setBackgroundAndFilter(
@@ -1277,20 +1269,20 @@ class MotionToast {
                         R.color.dark_bg_color, layout, context
                     )
 
-                    layout.custom_toast_text.setTextColor(
+                    binding.customToastText.setTextColor(
                         ContextCompat.getColor(
                             context,
                             warningToastColor
                         )
                     )
-                    layout.custom_toast_text.text =
+                    binding.customToastText.text =
                         if (title.isNullOrBlank()) MotionToastStyle.NO_INTERNET.getName() else title
 
                     setDescriptionDetails(
                         font,
                         Color.WHITE,
                         message,
-                        layout.custom_toast_description
+                        binding.customToastDescription
                     )
                     val toast = Toast(context.applicationContext)
                     startTimer(duration, toast)
@@ -1315,9 +1307,9 @@ class MotionToast {
             timer.start()
         }
 
-        private fun startPulseAnimation(context: Activity, layout: View) {
+        private fun startPulseAnimation(context: Activity, customToastImage: ImageView) {
             val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
-            layout.custom_toast_image.startAnimation(pulseAnimation)
+            customToastImage.startAnimation(pulseAnimation)
         }
 
         private fun setDescriptionDetails(
