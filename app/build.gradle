@@ -17,6 +17,10 @@ android {
         viewBinding true
     }
 
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+
     buildTypes {
         release {
             minifyEnabled false
