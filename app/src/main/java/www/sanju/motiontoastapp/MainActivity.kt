@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             R.id.deleteBtn -> {
                 MotionToast.createToast(
                     this, "Profile Deleted!",
-                    "",
+                    "Your profile has been deleted!",
                     MotionToastStyle.DELETE,
                     MotionToast.GRAVITY_BOTTOM,
                     MotionToast.LONG_DURATION,

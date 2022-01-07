@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/color_toast_view"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:layout_margin="@dimen/dimen_24"
     android:background="@drawable/toast_round_background"
     android:backgroundTint="@color/warning_color">
@@ -50,7 +50,7 @@
 
         <TextView
             android:id="@+id/color_toast_description"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_12"
             android:layout_marginTop="@dimen/dimen_4"
@@ -59,6 +59,7 @@
             android:ellipsize="marquee"
             android:fontFamily="@font/montserrat_regular"
             android:maxLines="2"
+            android:lineHeight="@dimen/dimen_20"
             android:text="@string/text_mock_description"
             android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
