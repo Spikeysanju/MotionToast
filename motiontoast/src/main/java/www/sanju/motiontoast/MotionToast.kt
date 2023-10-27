@@ -99,7 +99,7 @@ class MotionToast {
 
         // all toast CTA
         fun createToast(
-            context: Activity,
+            context: Context,
             title: String? = null,
             message: String,
             style: MotionToastStyle,
@@ -1307,7 +1307,7 @@ class MotionToast {
             timer.start()
         }
 
-        private fun startPulseAnimation(context: Activity, customToastImage: ImageView) {
+        private fun startPulseAnimation(context: Context, customToastImage: ImageView) {
             val pulseAnimation = AnimationUtils.loadAnimation(context, R.anim.pulse)
             customToastImage.startAnimation(pulseAnimation)
         }
